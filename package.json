@@ -1,0 +1,13 @@
+{
+  "name": "rafiqsystems-website",
+  "private": true,
+  "description": "rafiqsystems.com static site, deployed as Cloudflare Worker assets",
+  "license": "CC-BY-SA-4.0",
+  "scripts": {
+    "deploy": "wrangler deploy",
+    "preview": "wrangler dev"
+  },
+  "devDependencies": {
+    "wrangler": "^4.0.0"
+  }
+}
