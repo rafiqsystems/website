@@ -1,0 +1,16 @@
+{
+  // Rafiq website: static assets served by a Cloudflare Worker. No code runs; assets only.
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "rafiqsystems-website",
+  "compatibility_date": "2026-11-01",
+  "assets": {
+    "directory": "./public",
+    "not_found_handling": "404-page",
+    "html_handling": "auto-trailing-slash"
+  },
+  "routes": [
+    { "pattern": "rafiqsystems.com", "custom_domain": true },
+    { "pattern": "www.rafiqsystems.com", "custom_domain": true }
+  ],
+  "observability": { "enabled": false }
+}
