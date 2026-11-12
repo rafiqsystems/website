@@ -19,7 +19,10 @@ npx wrangler deploy
 ## Headers and redirects
 
 `public/_headers` sets a strict Content-Security-Policy, no-referrer, HSTS and a one-week
-immutable cache for `/assets/`. `public/_redirects` sends `www` to the apex.
+immutable cache for `/assets/`. Both `rafiqsystems.com` and `www.rafiqsystems.com` are custom
+domains of the Worker and serve the same files. Workers static assets only allow relative
+targets in `_redirects`, so the `www` to apex redirect is a Cloudflare **Redirect Rule** on
+the zone (dashboard: Rules, Redirect Rules, "www to apex", 301), not a file in this repo.
 
 In the Cloudflare dashboard keep these **off** for the zone, since each injects JavaScript or
 contradicts the privacy statement in the footer: Rocket Loader, Email Address Obfuscation,
