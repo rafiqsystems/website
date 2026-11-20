@@ -23,7 +23,7 @@ npx wrangler deploy
 Python 3 and writes plain HTML with no scripts and no inline styles.
 
 The product pictures in `public/assets/products/` are drawn by `tools/art.py` (three scenes per
-product, plain SVG with no scripts or embedded styles). Each product page and the home page show
+product, plain SVG with no scripts or embedded styles). Each product's pronunciation and meaning are the `SAY` list in `tools/products.py`. Each product page and the home page show
 them in a click-through walkthrough built from radio buttons and CSS; the captions are the `TOURS`
 list in `tools/products.py`. Run `python3 tools/art.py` then `python3 tools/products.py` after a change.
 

@@ -1,13 +1,16 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Qafila: Cooperative cars | Rafiq</title><meta name="description" content="Cars that cooperate to avoid accidents and traffic, with no central map of who is where.">
-<link rel="stylesheet" href="/assets/site.css?v=20261124"><link rel="icon" href="/assets/favicon-32.png" sizes="32x32"><link rel="icon" href="/assets/icon-192.png" sizes="192x192"><link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="stylesheet" href="/assets/site.css?v=20261125"><link rel="icon" href="/assets/favicon-32.png" sizes="32x32"><link rel="icon" href="/assets/icon-192.png" sizes="192x192"><link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <meta property="og:title" content="Qafila: Cooperative cars | Rafiq"><meta property="og:description" content="Cars that cooperate to avoid accidents and traffic, with no central map of who is where."><meta property="og:image" content="https://rafiqsystems.com/assets/social-card.png"><meta property="og:type" content="website"><meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0b0b1f"></head><body><div class="wrap">
 <header class="top"><a class="brand" href="/"><img src="/assets/icon-64.png" alt="" width="40" height="40">Rafiq</a>
 <nav><a href="/products/">Products</a><a href="/principles/">Principles</a><a href="/roadmap/">Roadmap</a><a href="/security/">Security</a><a href="https://github.com/rafiqsystems">GitHub</a></nav></header>
-<main class="prose product"><p class="crumbs"><a href="/products/">Products</a> / Qafila</p>
-<span class="tag">Cooperative cars · Later</span><h1>Qafila</h1><p class="lede">Rafiq in each car. Cars that run it share hazards, intentions and congestion with one another, so each driver learns sooner what the cars ahead already know.</p>
-</main>
+<main class="product">
+<header class="p-hero"><p class="crumbs"><a href="/products/">Products</a> / Qafila</p>
+<p class="p-tags"><span class="pill">Cooperative cars</span><span class="pill soft">Later</span></p>
+<h1 class="grad">Qafila</h1>
+<p class="say" aria-label="Pronounced KAH fi la. Meaning: a caravan, travelling together."><span class="sound" aria-hidden="true"></span><span class="phon">KAH-fi-la</span><span class="sep">·</span><span class="pos">noun</span><span class="mean">a caravan, travelling together</span></p>
+<p class="lede">Rafiq in each car. Cars that run it share hazards, intentions and congestion with one another, so each driver learns sooner what the cars ahead already know.</p></header>
 <section class="tour" aria-label="See how it works"><h2>See how it works</h2><p class="hint">Pick a step.</p>
 <input class="tour-r" type="radio" name="tour" id="s1" checked><input class="tour-r" type="radio" name="tour" id="s2"><input class="tour-r" type="radio" name="tour" id="s3">
 <div class="tour-tabs"><label for="s1"><b>1</b>Be warned</label><label for="s2"><b>2</b>Cars cooperate</label><label for="s3"><b>3</b>Flow together</label></div>
@@ -16,26 +19,23 @@
 <figure class="tour-p p2"><img src="/assets/products/car-2.svg" alt="A road seen from above: a stopped car sends dotted signals back to three other cars." width="960" height="600" loading="lazy"><figcaption><strong>Cars cooperate.</strong> A stopped car tells the cars behind it, and they pass it on. Messages are signed, short-lived and go car to car.</figcaption></figure>
 <figure class="tour-p p3"><img src="/assets/products/car-3.svg" alt="A map with two routes; a card recommends leaving at 07:40 by the river road." width="960" height="600" loading="lazy"><figcaption><strong>Flow together.</strong> Route and departure advice is worked out in your car from what nearby cars shared, so traffic eases for everyone.</figcaption></figure>
 </div></section>
-<div class="prose">
-<h2>What it does</h2>
-<ul>
+<section class="p-sec"><h2>What it does</h2>
+<ul class="features">
 <li>Warnings about what you cannot see yet: a stopped vehicle around the bend, sudden braking ahead, a reported hazard.</li>
 <li>Route, departure and speed advice that keeps traffic flowing for everyone, not just one car.</li>
 <li>Suggestions at merges and junctions.</li>
 <li>Standard message formats, so it can interoperate with existing vehicle-to-vehicle systems.</li>
-</ul>
-<h2>Your data</h2>
-<p>What leaves the car is a small, signed, short-lived message you can read. Identities rotate every few minutes, shared knowledge travels as aggregates, and no party outside the car holds a record of where it has been.</p>
-<h2>Status</h2>
-<p class="note">Later, from the second half of 2028. Designed, not yet built. The first releases only advise the driver. Anything that influences steering, braking or acceleration waits for a safety case and a certified vehicle interface.</p>
-<h2>Works with</h2>
-</div>
+</ul></section>
+<section class="p-sec p-two"><div class="promise"><h2>Your data</h2><p>What leaves the car is a small, signed, short-lived message you can read. Identities rotate every few minutes, shared knowledge travels as aggregates, and no party outside the car holds a record of where it has been.</p></div>
+<div class="status"><h2>Where it stands</h2><p>Later, from the second half of 2028. Designed, not yet built. The first releases only advise the driver. Anything that influences steering, braking or acceleration waits for a safety case and a certified vehicle interface.</p><p class="more"><a href="/roadmap/">See the roadmap</a></p></div></section>
+<section class="p-sec"><h2>Works with</h2>
 <div class="grid related">
-<a class="card link shot" href="/products/core/"><img src="/assets/products/core-1.svg" alt="" width="960" height="600" loading="lazy"><span class="tag">Core · Foundation</span><h3>Qalb</h3><p>The shared engine behind every Rafiq product: models, memory, permissions and an audit log.</p></a>
-<a class="card link shot" href="/products/hub/"><img src="/assets/products/hub-1.svg" alt="" width="960" height="600" loading="lazy"><span class="tag">Home server · Foundation</span><h3>Markaz</h3><p>Qalb as a one-command server for a household, a school or a team.</p></a>
-<a class="card link shot" href="/products/manzar/"><img src="/assets/products/manzar-1.svg" alt="" width="960" height="600" loading="lazy"><span class="tag">Video · In development</span><h3>Manzar</h3><p>A video player for your own files, on the phone and on Android Auto, with no internet permission at all.</p></a>
-</div>
-<p class="back"><a href="/products/">All products</a> · <a href="/roadmap/">Roadmap</a> · <a href="/principles/">Principles</a></p>
+<a class="card link shot" href="/products/core/"><img src="/assets/products/core-1.svg" alt="" width="960" height="600" loading="lazy"><span class="tag">Core · Foundation</span><h3>Qalb</h3><p class="gloss">KALB · heart</p><p>The shared engine behind every Rafiq product: models, memory, permissions and an audit log.</p></a>
+<a class="card link shot" href="/products/hub/"><img src="/assets/products/hub-1.svg" alt="" width="960" height="600" loading="lazy"><span class="tag">Home server · Foundation</span><h3>Markaz</h3><p class="gloss">MAR-kaz · the centre</p><p>Qalb as a one-command server for a household, a school or a team.</p></a>
+<a class="card link shot" href="/products/manzar/"><img src="/assets/products/manzar-1.svg" alt="" width="960" height="600" loading="lazy"><span class="tag">Video · In development</span><h3>Manzar</h3><p class="gloss">MAN-zar · a view</p><p>A video player for your own files, on the phone and on Android Auto, with no internet permission at all.</p></a>
+</div></section>
+<nav class="pn" aria-label="More products"><a class="pn-a" href="/products/firewall/"><span>Previous</span><b>Hisn</b><i>Firewall</i></a><a class="pn-a all" href="/products/"><span>Browse</span><b>All products</b><i>14 in the family</i></a><a class="pn-a next" href="/products/tv/"><span>Next</span><b>Majlis</b><i>TV</i></a></nav>
+</main>
 <footer><div class="cols"><div><strong>Rafiq Systems</strong><br>Privacy-first, open-source AI companions.<br>Code: AGPL-3.0 and Apache-2.0. Name and logo: <a href="/trademark/">trademark policy</a>.</div>
 <div><a href="/products/">Products</a> · <a href="/principles/">Principles</a> · <a href="/roadmap/">Roadmap</a> · <a href="/security/">Security</a> · <a href="https://github.com/rafiqsystems">GitHub</a><br>
 <a href="mailto:hello@rafiqsystems.com">hello@rafiqsystems.com</a></div></div>

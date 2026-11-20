@@ -418,12 +418,15 @@ TOURS = {
 # The plain word for what each product is, shown beside its name.
 KIND = {'chat': 'Chat', 'study': 'Study', 'assistant': 'Assistant', 'mobile': 'Mobile', 'lamha': 'Documents', 'manzar': 'Video', 'os': 'Desktop', 'firewall': 'Firewall', 'car': 'Cooperative cars', 'tv': 'TV', 'home': 'Home', 'finance': 'Finance', 'core': 'Core', 'hub': 'Home server'}
 
+# How to say each name, and what it means: (pronunciation, meaning). Capitals mark the stressed syllable.
+SAY = {'chat': ('NAJ-wa', 'a confiding conversation'), 'study': ('HIK-mah', 'wisdom'), 'assistant': ('NAH-jid', 'one who comes to your help'), 'mobile': ('jaw-WAHL', 'on the move'), 'lamha': ('LAM-ha', 'a glance'), 'manzar': ('MAN-zar', 'a view'), 'os': ('nee-ZAHM', 'order; a system'), 'firewall': ('HISS-n', 'a fortress'), 'car': ('KAH-fi-la', 'a caravan, travelling together'), 'tv': ('MAJ-liss', 'the room where a household gathers'), 'home': ('DAHR', 'home'), 'finance': ('mee-ZAHN', 'a balance; a scale'), 'core': ('KALB', 'heart'), 'hub': ('MAR-kaz', 'the centre')}
+
 BY_SLUG = {p["slug"]: p for p in PRODUCTS}
 E = html.escape
 
 HEAD = """<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{title} | Rafiq</title><meta name="description" content="{desc}">
-<link rel="stylesheet" href="/assets/site.css?v=20261124"><link rel="icon" href="/assets/favicon-32.png" sizes="32x32"><link rel="icon" href="/assets/icon-192.png" sizes="192x192"><link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="stylesheet" href="/assets/site.css?v=20261125"><link rel="icon" href="/assets/favicon-32.png" sizes="32x32"><link rel="icon" href="/assets/icon-192.png" sizes="192x192"><link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <meta property="og:title" content="{title} | Rafiq"><meta property="og:description" content="{desc}"><meta property="og:image" content="https://rafiqsystems.com/assets/social-card.png"><meta property="og:type" content="website"><meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0b0b1f"></head><body><div class="wrap">
 <header class="top"><a class="brand" href="/"><img src="/assets/icon-64.png" alt="" width="40" height="40">Rafiq</a>
@@ -439,8 +442,8 @@ FOOT = """<footer><div class="cols"><div><strong>Rafiq Systems</strong><br>Priva
 
 def card(p):
     return ('<a class="card link shot" href="/products/{slug}/"><img src="/assets/products/{slug}-1.svg" alt="" width="960" height="600" loading="lazy">'
-            '<span class="tag">{tag}</span><h3>{name}</h3><p>{summary}</p></a>'
-            .format(slug=p["slug"], tag=E(KIND[p["slug"]] + " · " + p["tag"]), name=E(p["name"]), summary=E(p["summary"])))
+            '<span class="tag">{tag}</span><h3>{name}</h3><p class="gloss">{say} · {meaning}</p><p>{summary}</p></a>'
+            .format(slug=p["slug"], tag=E(KIND[p["slug"]] + " · " + p["tag"]), name=E(p["name"]), summary=E(p["summary"]), say=E(SAY[p["slug"]][0]), meaning=E(SAY[p["slug"]][1])))
 
 
 def tour(steps, heading="See how it works"):
@@ -458,16 +461,25 @@ def tour(steps, heading="See how it works"):
 
 
 def page(p):
-    out = [HEAD.format(title=E(p["name"] + ": " + KIND[p["slug"]]), desc=E(p["summary"], quote=True))]
-    out.append('<main class="prose product"><p class="crumbs"><a href="/products/">Products</a> / {}</p>\n'.format(E(p["name"])))
-    out.append('<span class="tag">{}</span><h1>{}</h1><p class="lede">{}</p>\n'.format(E(KIND[p["slug"]] + " · " + p["tag"]), E(p["name"]), E(p["lede"])))
-    out.append("</main>\n" + tour([(p["slug"], i + 1, t, c, a) for i, (t, c, a) in enumerate(TOURS[p["slug"]])]) + '<div class="prose">\n')
-    out.append("<h2>What it does</h2>\n<ul>\n" + "".join("<li>{}</li>\n".format(E(d)) for d in p["does"]) + "</ul>\n")
-    out.append("<h2>Your data</h2>\n<p>{}</p>\n".format(E(p["data"])))
-    out.append('<h2>Status</h2>\n<p class="note">{}</p>\n'.format(E(p["status"])))
-    out.append('<h2>Works with</h2>\n</div>\n<div class="grid related">\n' + "\n".join(card(BY_SLUG[s]) for s in p["works"]) + "\n</div>\n")
-    out.append('<p class="back"><a href="/products/">All products</a> · <a href="/roadmap/">Roadmap</a> · <a href="/principles/">Principles</a></p>\n')
-    out.append(FOOT)
+    slug = p["slug"]
+    say, meaning = SAY[slug]
+    i = PRODUCTS.index(p)
+    prev, nxt = PRODUCTS[i - 1], PRODUCTS[(i + 1) % len(PRODUCTS)]
+    out = [HEAD.format(title=E(p["name"] + ": " + KIND[slug]), desc=E(p["summary"], quote=True))]
+    out.append('<main class="product">\n<header class="p-hero"><p class="crumbs"><a href="/products/">Products</a> / {}</p>\n'.format(E(p["name"])))
+    out.append('<p class="p-tags"><span class="pill">{}</span><span class="pill soft">{}</span></p>\n'.format(E(KIND[slug]), E(p["tag"])))
+    out.append('<h1 class="grad">{}</h1>\n'.format(E(p["name"])))
+    out.append('<p class="say" aria-label="Pronounced {}. Meaning: {}."><span class="sound" aria-hidden="true"></span><span class="phon">{}</span><span class="sep">·</span><span class="pos">noun</span><span class="mean">{}</span></p>\n'
+               .format(E(say.replace("-", " "), quote=True), E(meaning, quote=True), E(say), E(meaning)))
+    out.append('<p class="lede">{}</p></header>\n'.format(E(p["lede"])))
+    out.append(tour([(slug, n + 1, t, c, a) for n, (t, c, a) in enumerate(TOURS[slug])]))
+    out.append('<section class="p-sec"><h2>What it does</h2>\n<ul class="features">\n' + "".join("<li>{}</li>\n".format(E(d)) for d in p["does"]) + "</ul></section>\n")
+    out.append('<section class="p-sec p-two"><div class="promise"><h2>Your data</h2><p>{}</p></div>\n'.format(E(p["data"])))
+    out.append('<div class="status"><h2>Where it stands</h2><p>{}</p><p class="more"><a href="/roadmap/">See the roadmap</a></p></div></section>\n'.format(E(p["status"])))
+    out.append('<section class="p-sec"><h2>Works with</h2>\n<div class="grid related">\n' + "\n".join(card(BY_SLUG[s]) for s in p["works"]) + "\n</div></section>\n")
+    out.append('<nav class="pn" aria-label="More products"><a class="pn-a" href="/products/{0}/"><span>Previous</span><b>{1}</b><i>{2}</i></a><a class="pn-a all" href="/products/"><span>Browse</span><b>All products</b><i>{6} in the family</i></a><a class="pn-a next" href="/products/{3}/"><span>Next</span><b>{4}</b><i>{5}</i></a></nav>\n'
+               .format(prev["slug"], E(prev["name"]), E(KIND[prev["slug"]]), nxt["slug"], E(nxt["name"]), E(KIND[nxt["slug"]]), len(PRODUCTS)))
+    out.append("</main>\n" + FOOT)
     return "".join(out)
 
 

@@ -1,13 +1,16 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Markaz: Home server | Rafiq</title><meta name="description" content="Qalb as a one-command server for a household, a school or a team.">
-<link rel="stylesheet" href="/assets/site.css?v=20261124"><link rel="icon" href="/assets/favicon-32.png" sizes="32x32"><link rel="icon" href="/assets/icon-192.png" sizes="192x192"><link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="stylesheet" href="/assets/site.css?v=20261125"><link rel="icon" href="/assets/favicon-32.png" sizes="32x32"><link rel="icon" href="/assets/icon-192.png" sizes="192x192"><link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <meta property="og:title" content="Markaz: Home server | Rafiq"><meta property="og:description" content="Qalb as a one-command server for a household, a school or a team."><meta property="og:image" content="https://rafiqsystems.com/assets/social-card.png"><meta property="og:type" content="website"><meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0b0b1f"></head><body><div class="wrap">
 <header class="top"><a class="brand" href="/"><img src="/assets/icon-64.png" alt="" width="40" height="40">Rafiq</a>
 <nav><a href="/products/">Products</a><a href="/principles/">Principles</a><a href="/roadmap/">Roadmap</a><a href="/security/">Security</a><a href="https://github.com/rafiqsystems">GitHub</a></nav></header>
-<main class="prose product"><p class="crumbs"><a href="/products/">Products</a> / Markaz</p>
-<span class="tag">Home server · Foundation</span><h1>Markaz</h1><p class="lede">A small server you run yourself. It packages Qalb with a local model server so everyone at home, or in a class, shares one private companion.</p>
-</main>
+<main class="product">
+<header class="p-hero"><p class="crumbs"><a href="/products/">Products</a> / Markaz</p>
+<p class="p-tags"><span class="pill">Home server</span><span class="pill soft">Foundation</span></p>
+<h1 class="grad">Markaz</h1>
+<p class="say" aria-label="Pronounced MAR kaz. Meaning: the centre."><span class="sound" aria-hidden="true"></span><span class="phon">MAR-kaz</span><span class="sep">·</span><span class="pos">noun</span><span class="mean">the centre</span></p>
+<p class="lede">A small server you run yourself. It packages Qalb with a local model server so everyone at home, or in a class, shares one private companion.</p></header>
 <section class="tour" aria-label="See how it works"><h2>See how it works</h2><p class="hint">Pick a step.</p>
 <input class="tour-r" type="radio" name="tour" id="s1" checked><input class="tour-r" type="radio" name="tour" id="s2"><input class="tour-r" type="radio" name="tour" id="s3">
 <div class="tour-tabs"><label for="s1"><b>1</b>One command</label><label for="s2"><b>2</b>At home</label><label for="s3"><b>3</b>For everyone</label></div>
@@ -16,27 +19,24 @@
 <figure class="tour-p p2"><img src="/assets/products/hub-2.svg" alt="A house outline with a Markaz in the middle connected to a laptop, phone, TV and tablet; a crossed-out cloud." width="960" height="600" loading="lazy"><figcaption><strong>At home.</strong> Laptops, phones, the TV and tablets all talk to one small server inside the house.</figcaption></figure>
 <figure class="tour-p p3"><img src="/assets/products/hub-3.svg" alt="One Markaz connected to three people, each with their own lock." width="960" height="600" loading="lazy"><figcaption><strong>For everyone.</strong> One Markaz and one model shared by a household or a class, each person with their own memory and permissions.</figcaption></figure>
 </div></section>
-<div class="prose">
-<h2>What it does</h2>
-<ul>
+<section class="p-sec"><h2>What it does</h2>
+<ul class="features">
 <li>One command to start, using Docker Compose.</li>
 <li>A local model server included, on CPU or on a graphics card.</li>
 <li>An optional larger database for many users.</li>
 <li>Reachable only from the machine it runs on until you choose to open it to your network.</li>
-</ul>
-<h2>Your data</h2>
-<p>Your Markaz, your data. No account with us is needed, and no secrets ship in the configuration.</p>
-<h2>Status</h2>
-<p class="note">A first version exists: the server, a choice of two model servers and an optional database. Multi-user schools and encrypted sync follow in Phase 2.</p>
-<h2>Works with</h2>
-</div>
+</ul></section>
+<section class="p-sec p-two"><div class="promise"><h2>Your data</h2><p>Your Markaz, your data. No account with us is needed, and no secrets ship in the configuration.</p></div>
+<div class="status"><h2>Where it stands</h2><p>A first version exists: the server, a choice of two model servers and an optional database. Multi-user schools and encrypted sync follow in Phase 2.</p><p class="more"><a href="/roadmap/">See the roadmap</a></p></div></section>
+<section class="p-sec"><h2>Works with</h2>
 <div class="grid related">
-<a class="card link shot" href="/products/core/"><img src="/assets/products/core-1.svg" alt="" width="960" height="600" loading="lazy"><span class="tag">Core · Foundation</span><h3>Qalb</h3><p>The shared engine behind every Rafiq product: models, memory, permissions and an audit log.</p></a>
-<a class="card link shot" href="/products/study/"><img src="/assets/products/study-1.svg" alt="" width="960" height="600" loading="lazy"><span class="tag">Study · Phase 2</span><h3>Hikma</h3><p>Lessons become transcripts, flashcards and a tutor that cites its sources, with study plans and a clear view for parents.</p></a>
-<a class="card link shot" href="/products/mobile/"><img src="/assets/products/mobile-1.svg" alt="" width="960" height="600" loading="lazy"><span class="tag">Mobile · Phase 3</span><h3>Jawwal</h3><p>Rafiq on your phone, with small models on the device and encrypted sync to your own Markaz.</p></a>
-<a class="card link shot" href="/products/firewall/"><img src="/assets/products/firewall-1.svg" alt="" width="960" height="600" loading="lazy"><span class="tag">Firewall · Phase 4</span><h3>Hisn</h3><p>A next-generation firewall with on-device AI that explains itself, for your laptop, desktop and home.</p></a>
-</div>
-<p class="back"><a href="/products/">All products</a> · <a href="/roadmap/">Roadmap</a> · <a href="/principles/">Principles</a></p>
+<a class="card link shot" href="/products/core/"><img src="/assets/products/core-1.svg" alt="" width="960" height="600" loading="lazy"><span class="tag">Core · Foundation</span><h3>Qalb</h3><p class="gloss">KALB · heart</p><p>The shared engine behind every Rafiq product: models, memory, permissions and an audit log.</p></a>
+<a class="card link shot" href="/products/study/"><img src="/assets/products/study-1.svg" alt="" width="960" height="600" loading="lazy"><span class="tag">Study · Phase 2</span><h3>Hikma</h3><p class="gloss">HIK-mah · wisdom</p><p>Lessons become transcripts, flashcards and a tutor that cites its sources, with study plans and a clear view for parents.</p></a>
+<a class="card link shot" href="/products/mobile/"><img src="/assets/products/mobile-1.svg" alt="" width="960" height="600" loading="lazy"><span class="tag">Mobile · Phase 3</span><h3>Jawwal</h3><p class="gloss">jaw-WAHL · on the move</p><p>Rafiq on your phone, with small models on the device and encrypted sync to your own Markaz.</p></a>
+<a class="card link shot" href="/products/firewall/"><img src="/assets/products/firewall-1.svg" alt="" width="960" height="600" loading="lazy"><span class="tag">Firewall · Phase 4</span><h3>Hisn</h3><p class="gloss">HISS-n · a fortress</p><p>A next-generation firewall with on-device AI that explains itself, for your laptop, desktop and home.</p></a>
+</div></section>
+<nav class="pn" aria-label="More products"><a class="pn-a" href="/products/core/"><span>Previous</span><b>Qalb</b><i>Core</i></a><a class="pn-a all" href="/products/"><span>Browse</span><b>All products</b><i>14 in the family</i></a><a class="pn-a next" href="/products/chat/"><span>Next</span><b>Najwa</b><i>Chat</i></a></nav>
+</main>
 <footer><div class="cols"><div><strong>Rafiq Systems</strong><br>Privacy-first, open-source AI companions.<br>Code: AGPL-3.0 and Apache-2.0. Name and logo: <a href="/trademark/">trademark policy</a>.</div>
 <div><a href="/products/">Products</a> · <a href="/principles/">Principles</a> · <a href="/roadmap/">Roadmap</a> · <a href="/security/">Security</a> · <a href="https://github.com/rafiqsystems">GitHub</a><br>
 <a href="mailto:hello@rafiqsystems.com">hello@rafiqsystems.com</a></div></div>

@@ -1,13 +1,16 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Najid: Assistant | Rafiq</title><meta name="description" content="A personal assistant for your day, with a grant behind every data source.">
-<link rel="stylesheet" href="/assets/site.css?v=20261124"><link rel="icon" href="/assets/favicon-32.png" sizes="32x32"><link rel="icon" href="/assets/icon-192.png" sizes="192x192"><link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="stylesheet" href="/assets/site.css?v=20261125"><link rel="icon" href="/assets/favicon-32.png" sizes="32x32"><link rel="icon" href="/assets/icon-192.png" sizes="192x192"><link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <meta property="og:title" content="Najid: Assistant | Rafiq"><meta property="og:description" content="A personal assistant for your day, with a grant behind every data source."><meta property="og:image" content="https://rafiqsystems.com/assets/social-card.png"><meta property="og:type" content="website"><meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0b0b1f"></head><body><div class="wrap">
 <header class="top"><a class="brand" href="/"><img src="/assets/icon-64.png" alt="" width="40" height="40">Rafiq</a>
 <nav><a href="/products/">Products</a><a href="/principles/">Principles</a><a href="/roadmap/">Roadmap</a><a href="/security/">Security</a><a href="https://github.com/rafiqsystems">GitHub</a></nav></header>
-<main class="prose product"><p class="crumbs"><a href="/products/">Products</a> / Najid</p>
-<span class="tag">Assistant · Phase 3</span><h1>Najid</h1><p class="lede">One page that tells you what today looks like: your calendar, what needs attention in your inbox, open tasks from your notes, and a few headlines. Every line says where it came from.</p>
-</main>
+<main class="product">
+<header class="p-hero"><p class="crumbs"><a href="/products/">Products</a> / Najid</p>
+<p class="p-tags"><span class="pill">Assistant</span><span class="pill soft">Phase 3</span></p>
+<h1 class="grad">Najid</h1>
+<p class="say" aria-label="Pronounced NAH jid. Meaning: one who comes to your help."><span class="sound" aria-hidden="true"></span><span class="phon">NAH-jid</span><span class="sep">·</span><span class="pos">noun</span><span class="mean">one who comes to your help</span></p>
+<p class="lede">One page that tells you what today looks like: your calendar, what needs attention in your inbox, open tasks from your notes, and a few headlines. Every line says where it came from.</p></header>
 <section class="tour" aria-label="See how it works"><h2>See how it works</h2><p class="hint">Pick a step.</p>
 <input class="tour-r" type="radio" name="tour" id="s1" checked><input class="tour-r" type="radio" name="tour" id="s2"><input class="tour-r" type="radio" name="tour" id="s3">
 <div class="tour-tabs"><label for="s1"><b>1</b>Your day</label><label for="s2"><b>2</b>You decide</label><label for="s3"><b>3</b>While you sleep</label></div>
@@ -16,27 +19,24 @@
 <figure class="tour-p p2"><img src="/assets/products/assistant-2.svg" alt="A consent card for a calendar connector listing reads, sends, writes, keeps and runs." width="960" height="600" loading="lazy"><figcaption><strong>You decide.</strong> Before a connector touches anything, a card lists what it reads, sends, writes and keeps, and when it may run.</figcaption></figure>
 <figure class="tour-p p3"><img src="/assets/products/assistant-3.svg" alt="A schedule set for 06:30 daily beside a log showing two sources allowed and two skipped." width="960" height="600" loading="lazy"><figcaption><strong>While you sleep.</strong> A scheduled briefing uses only what you allowed to run unattended. Everything else is skipped, and all of it is logged.</figcaption></figure>
 </div></section>
-<div class="prose">
-<h2>What it does</h2>
-<ul>
+<section class="p-sec"><h2>What it does</h2>
+<ul class="features">
 <li>A daily briefing, on request or on a schedule you set.</li>
 <li>Calendar, mail headers, notes and news through connectors that each declare what they read and where they send it.</li>
 <li>Scheduled runs only touch what you explicitly allowed to run unattended.</li>
 <li>Suggestions are text. Acting on one, such as moving an event or replying, is a separate permission.</li>
 <li>A missing permission produces a skipped section, never a nag.</li>
-</ul>
-<h2>Your data</h2>
-<p>Connectors contact only the hosts named on their consent card. Credentials live in the vault, never in the grant. Every call is written to an audit log you can read.</p>
-<h2>Status</h2>
-<p class="note">Phase 3. A reference briefing with file, calendar, mail and feed connectors works today against Qalb.</p>
-<h2>Works with</h2>
-</div>
+</ul></section>
+<section class="p-sec p-two"><div class="promise"><h2>Your data</h2><p>Connectors contact only the hosts named on their consent card. Credentials live in the vault, never in the grant. Every call is written to an audit log you can read.</p></div>
+<div class="status"><h2>Where it stands</h2><p>Phase 3. A reference briefing with file, calendar, mail and feed connectors works today against Qalb.</p><p class="more"><a href="/roadmap/">See the roadmap</a></p></div></section>
+<section class="p-sec"><h2>Works with</h2>
 <div class="grid related">
-<a class="card link shot" href="/products/core/"><img src="/assets/products/core-1.svg" alt="" width="960" height="600" loading="lazy"><span class="tag">Core · Foundation</span><h3>Qalb</h3><p>The shared engine behind every Rafiq product: models, memory, permissions and an audit log.</p></a>
-<a class="card link shot" href="/products/chat/"><img src="/assets/products/chat-1.svg" alt="" width="960" height="600" loading="lazy"><span class="tag">Chat · Phase 1</span><h3>Najwa</h3><p>A private chatbot that runs on your own machine and tells you which model answered and where.</p></a>
-<a class="card link shot" href="/products/tv/"><img src="/assets/products/tv-1.svg" alt="" width="960" height="600" loading="lazy"><span class="tag">TV · Incubating</span><h3>Majlis</h3><p>A living-room front end for Android TV and Google TV, fed by the household&#x27;s own server.</p></a>
-</div>
-<p class="back"><a href="/products/">All products</a> · <a href="/roadmap/">Roadmap</a> · <a href="/principles/">Principles</a></p>
+<a class="card link shot" href="/products/core/"><img src="/assets/products/core-1.svg" alt="" width="960" height="600" loading="lazy"><span class="tag">Core · Foundation</span><h3>Qalb</h3><p class="gloss">KALB · heart</p><p>The shared engine behind every Rafiq product: models, memory, permissions and an audit log.</p></a>
+<a class="card link shot" href="/products/chat/"><img src="/assets/products/chat-1.svg" alt="" width="960" height="600" loading="lazy"><span class="tag">Chat · Phase 1</span><h3>Najwa</h3><p class="gloss">NAJ-wa · a confiding conversation</p><p>A private chatbot that runs on your own machine and tells you which model answered and where.</p></a>
+<a class="card link shot" href="/products/tv/"><img src="/assets/products/tv-1.svg" alt="" width="960" height="600" loading="lazy"><span class="tag">TV · Incubating</span><h3>Majlis</h3><p class="gloss">MAJ-liss · the room where a household gathers</p><p>A living-room front end for Android TV and Google TV, fed by the household&#x27;s own server.</p></a>
+</div></section>
+<nav class="pn" aria-label="More products"><a class="pn-a" href="/products/study/"><span>Previous</span><b>Hikma</b><i>Study</i></a><a class="pn-a all" href="/products/"><span>Browse</span><b>All products</b><i>14 in the family</i></a><a class="pn-a next" href="/products/mobile/"><span>Next</span><b>Jawwal</b><i>Mobile</i></a></nav>
+</main>
 <footer><div class="cols"><div><strong>Rafiq Systems</strong><br>Privacy-first, open-source AI companions.<br>Code: AGPL-3.0 and Apache-2.0. Name and logo: <a href="/trademark/">trademark policy</a>.</div>
 <div><a href="/products/">Products</a> · <a href="/principles/">Principles</a> · <a href="/roadmap/">Roadmap</a> · <a href="/security/">Security</a> · <a href="https://github.com/rafiqsystems">GitHub</a><br>
 <a href="mailto:hello@rafiqsystems.com">hello@rafiqsystems.com</a></div></div>

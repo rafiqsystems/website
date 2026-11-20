@@ -1,13 +1,16 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Nizam: Desktop | Rafiq</title><meta name="description" content="An AI-first desktop: one command surface where you say what you want and agents do it, with every permission visible.">
-<link rel="stylesheet" href="/assets/site.css?v=20261124"><link rel="icon" href="/assets/favicon-32.png" sizes="32x32"><link rel="icon" href="/assets/icon-192.png" sizes="192x192"><link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="stylesheet" href="/assets/site.css?v=20261125"><link rel="icon" href="/assets/favicon-32.png" sizes="32x32"><link rel="icon" href="/assets/icon-192.png" sizes="192x192"><link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <meta property="og:title" content="Nizam: Desktop | Rafiq"><meta property="og:description" content="An AI-first desktop: one command surface where you say what you want and agents do it, with every permission visible."><meta property="og:image" content="https://rafiqsystems.com/assets/social-card.png"><meta property="og:type" content="website"><meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0b0b1f"></head><body><div class="wrap">
 <header class="top"><a class="brand" href="/"><img src="/assets/icon-64.png" alt="" width="40" height="40">Rafiq</a>
 <nav><a href="/products/">Products</a><a href="/principles/">Principles</a><a href="/roadmap/">Roadmap</a><a href="/security/">Security</a><a href="https://github.com/rafiqsystems">GitHub</a></nav></header>
-<main class="prose product"><p class="crumbs"><a href="/products/">Products</a> / Nizam</p>
-<span class="tag">Desktop · Phase 4</span><h1>Nizam</h1><p class="lede">A refreshed GNOME desktop whose front door is a single command palette. Type what you want in your own words, and Rafiq does it with the machine&#x27;s own capabilities, inside limits you can see.</p>
-</main>
+<main class="product">
+<header class="p-hero"><p class="crumbs"><a href="/products/">Products</a> / Nizam</p>
+<p class="p-tags"><span class="pill">Desktop</span><span class="pill soft">Phase 4</span></p>
+<h1 class="grad">Nizam</h1>
+<p class="say" aria-label="Pronounced nee ZAHM. Meaning: order; a system."><span class="sound" aria-hidden="true"></span><span class="phon">nee-ZAHM</span><span class="sep">·</span><span class="pos">noun</span><span class="mean">order; a system</span></p>
+<p class="lede">A refreshed GNOME desktop whose front door is a single command palette. Type what you want in your own words, and Rafiq does it with the machine&#x27;s own capabilities, inside limits you can see.</p></header>
 <section class="tour" aria-label="See how it works"><h2>See how it works</h2><p class="hint">Pick a step.</p>
 <input class="tour-r" type="radio" name="tour" id="s1" checked><input class="tour-r" type="radio" name="tour" id="s2"><input class="tour-r" type="radio" name="tour" id="s3">
 <div class="tour-tabs"><label for="s1"><b>1</b>Say it</label><label for="s2"><b>2</b>Approve</label><label for="s3"><b>3</b>See everything</label></div>
@@ -16,27 +19,24 @@
 <figure class="tour-p p2"><img src="/assets/products/os-2.svg" alt="A progress list with two finished steps, above a card asking permission to read, write and reach specific places." width="960" height="600" loading="lazy"><figcaption><strong>Approve.</strong> An agent does the steps and stops to ask before it touches a folder or reaches a server.</figcaption></figure>
 <figure class="tour-p p3"><img src="/assets/products/os-3.svg" alt="A panel titled What Rafiq can see right now, with Files and Network rows that have Revoke buttons." width="960" height="600" loading="lazy"><figcaption><strong>See everything.</strong> A live panel lists what Rafiq can reach right now. Revoke any row. Everything else does not exist to it.</figcaption></figure>
 </div></section>
-<div class="prose">
-<h2>What it does</h2>
-<ul>
+<section class="p-sec"><h2>What it does</h2>
+<ul class="features">
 <li>One shortcut raises the palette: launch, find, arrange windows, change settings, or ask in plain language.</li>
 <li>Agents run multi-step work in a sandbox that contains only the files and network destinations you granted.</li>
 <li>The operating system&#x27;s own functions, such as files, windows, clipboard, settings and notifications, are offered to agents as MCP servers under the same consent rules as any connector.</li>
 <li>A live panel shows what Rafiq can see right now, with revoke on every row.</li>
 <li>The classic desktop stays one toggle away.</li>
-</ul>
-<h2>Your data</h2>
-<p>A tool that lies about what it needs gains nothing: it runs with a filesystem that contains only the granted paths and a network that reaches only the granted hosts. Every decision is logged.</p>
-<h2>Status</h2>
-<p class="note">Phase 4. The Linux sandbox and the agent runtime are built and tested. The palette and the desktop image are designed, not yet built.</p>
-<h2>Works with</h2>
-</div>
+</ul></section>
+<section class="p-sec p-two"><div class="promise"><h2>Your data</h2><p>A tool that lies about what it needs gains nothing: it runs with a filesystem that contains only the granted paths and a network that reaches only the granted hosts. Every decision is logged.</p></div>
+<div class="status"><h2>Where it stands</h2><p>Phase 4. The Linux sandbox and the agent runtime are built and tested. The palette and the desktop image are designed, not yet built.</p><p class="more"><a href="/roadmap/">See the roadmap</a></p></div></section>
+<section class="p-sec"><h2>Works with</h2>
 <div class="grid related">
-<a class="card link shot" href="/products/core/"><img src="/assets/products/core-1.svg" alt="" width="960" height="600" loading="lazy"><span class="tag">Core · Foundation</span><h3>Qalb</h3><p>The shared engine behind every Rafiq product: models, memory, permissions and an audit log.</p></a>
-<a class="card link shot" href="/products/firewall/"><img src="/assets/products/firewall-1.svg" alt="" width="960" height="600" loading="lazy"><span class="tag">Firewall · Phase 4</span><h3>Hisn</h3><p>A next-generation firewall with on-device AI that explains itself, for your laptop, desktop and home.</p></a>
-<a class="card link shot" href="/products/assistant/"><img src="/assets/products/assistant-1.svg" alt="" width="960" height="600" loading="lazy"><span class="tag">Assistant · Phase 3</span><h3>Najid</h3><p>A personal assistant for your day, with a grant behind every data source.</p></a>
-</div>
-<p class="back"><a href="/products/">All products</a> · <a href="/roadmap/">Roadmap</a> · <a href="/principles/">Principles</a></p>
+<a class="card link shot" href="/products/core/"><img src="/assets/products/core-1.svg" alt="" width="960" height="600" loading="lazy"><span class="tag">Core · Foundation</span><h3>Qalb</h3><p class="gloss">KALB · heart</p><p>The shared engine behind every Rafiq product: models, memory, permissions and an audit log.</p></a>
+<a class="card link shot" href="/products/firewall/"><img src="/assets/products/firewall-1.svg" alt="" width="960" height="600" loading="lazy"><span class="tag">Firewall · Phase 4</span><h3>Hisn</h3><p class="gloss">HISS-n · a fortress</p><p>A next-generation firewall with on-device AI that explains itself, for your laptop, desktop and home.</p></a>
+<a class="card link shot" href="/products/assistant/"><img src="/assets/products/assistant-1.svg" alt="" width="960" height="600" loading="lazy"><span class="tag">Assistant · Phase 3</span><h3>Najid</h3><p class="gloss">NAH-jid · one who comes to your help</p><p>A personal assistant for your day, with a grant behind every data source.</p></a>
+</div></section>
+<nav class="pn" aria-label="More products"><a class="pn-a" href="/products/manzar/"><span>Previous</span><b>Manzar</b><i>Video</i></a><a class="pn-a all" href="/products/"><span>Browse</span><b>All products</b><i>14 in the family</i></a><a class="pn-a next" href="/products/firewall/"><span>Next</span><b>Hisn</b><i>Firewall</i></a></nav>
+</main>
 <footer><div class="cols"><div><strong>Rafiq Systems</strong><br>Privacy-first, open-source AI companions.<br>Code: AGPL-3.0 and Apache-2.0. Name and logo: <a href="/trademark/">trademark policy</a>.</div>
 <div><a href="/products/">Products</a> · <a href="/principles/">Principles</a> · <a href="/roadmap/">Roadmap</a> · <a href="/security/">Security</a> · <a href="https://github.com/rafiqsystems">GitHub</a><br>
 <a href="mailto:hello@rafiqsystems.com">hello@rafiqsystems.com</a></div></div>
