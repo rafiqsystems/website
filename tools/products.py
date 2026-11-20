@@ -428,17 +428,20 @@ E = html.escape
 
 HEAD = """<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{title} | Rafiq</title><meta name="description" content="{desc}">
-<link rel="stylesheet" href="/assets/site.css?v=20261125"><link rel="icon" href="/assets/favicon-32.png" sizes="32x32"><link rel="icon" href="/assets/icon-192.png" sizes="192x192"><link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="stylesheet" href="/assets/site.css?v=20261126"><link rel="icon" href="/assets/favicon-32.png" sizes="32x32"><link rel="icon" href="/assets/icon-192.png" sizes="192x192"><link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <meta property="og:title" content="{title} | Rafiq"><meta property="og:description" content="{desc}"><meta property="og:image" content="https://rafiqsystems.com/assets/social-card.png"><meta property="og:type" content="website"><meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0b0b1f"></head><body><div class="wrap">
 <header class="top"><a class="brand" href="/"><img src="/assets/icon-64.png" alt="" width="40" height="40">Rafiq</a>
-<nav><a href="/products/">Products</a><a href="/principles/">Principles</a><a href="/roadmap/">Roadmap</a><a href="/security/">Security</a><a href="https://github.com/rafiqsystems">GitHub</a></nav></header>
+<nav><a href="/products/" aria-current="page">Products</a><a href="/principles/">Principles</a><a href="/roadmap/">Roadmap</a><a href="/security/">Security</a><a href="https://github.com/rafiqsystems">GitHub</a></nav></header>
 """
 
-FOOT = """<footer><div class="cols"><div><strong>Rafiq Systems</strong><br>Privacy-first, open-source AI companions.<br>Code: AGPL-3.0 and Apache-2.0. Name and logo: <a href="/trademark/">trademark policy</a>.</div>
-<div><a href="/products/">Products</a> · <a href="/principles/">Principles</a> · <a href="/roadmap/">Roadmap</a> · <a href="/security/">Security</a> · <a href="https://github.com/rafiqsystems">GitHub</a><br>
-<a href="mailto:hello@rafiqsystems.com">hello@rafiqsystems.com</a></div></div>
-<p class="fine">This site sets no cookies, loads nothing from third parties, and collects no analytics. It is static HTML with no JavaScript.</p></footer></div></body></html>
+FOOT = """<footer><div class="f-grid">
+<div class="f-brand"><a class="brand" href="/"><img src="/assets/icon-64.png" alt="" width="40" height="40">Rafiq</a><p>A trustworthy companion that runs on your own device. Private by design, open source throughout.</p></div>
+<div><h4>Products</h4><ul><li><a href="/products/chat/">Najwa</a></li><li><a href="/products/study/">Hikma</a></li><li><a href="/products/assistant/">Najid</a></li><li><a href="/products/mobile/">Jawwal</a></li><li><a href="/products/lamha/">Lamha</a></li><li><a href="/products/manzar/">Manzar</a></li><li><a href="/products/os/">Nizam</a></li></ul></div>
+<div><h4 class="quiet">More products</h4><ul><li><a href="/products/firewall/">Hisn</a></li><li><a href="/products/car/">Qafila</a></li><li><a href="/products/tv/">Majlis</a></li><li><a href="/products/home/">Dar</a></li><li><a href="/products/finance/">Mizan</a></li><li><a href="/products/core/">Qalb</a></li><li><a href="/products/hub/">Markaz</a></li></ul></div>
+<div><h4>Rafiq Systems</h4><ul><li><a href="/principles/">Principles</a></li><li><a href="/roadmap/">Roadmap</a></li><li><a href="/security/">Security</a></li><li><a href="/trademark/">Trademark policy</a></li><li><a href="https://github.com/rafiqsystems">GitHub</a></li><li><a href="mailto:hello@rafiqsystems.com">hello@rafiqsystems.com</a></li></ul></div>
+</div>
+<p class="fine">Code: AGPL-3.0 and Apache-2.0. This site sets no cookies, loads nothing from third parties, and collects no analytics. It is static HTML with no JavaScript.</p></footer></div></body></html>
 """
 
 
@@ -487,7 +490,7 @@ def page(p):
 
 def index():
     out = [HEAD.format(title="Products", desc="Every Rafiq product: chat, study, assistant, apps, an AI-first desktop, a firewall, the home, your finances, cooperative cars, and the core they share.")]
-    out.append('<main><div class="prose"><h1>Products</h1><p class="lede">Every product is a surface on one shared core, and each is held to the same principles: local by default, consent for every data flow, and data you can take with you.</p></div>\n')
+    out.append('<main><div class="prose page-head"><p class="p-tags"><span class="pill">The family</span><span class="pill soft">'+str(len(PRODUCTS))+' products</span></p><h1 class="grad">Products</h1><p class="lede">Every product is a surface on one shared core, and each is held to the same principles: local by default, consent for every data flow, and data you can take with you.</p></div>\n')
     out.append('<div class="grid products">\n' + "\n".join(card(p) for p in PRODUCTS) + "\n</div>\n")
     out.append('<p class="back">Build order follows the <a href="/roadmap/">roadmap</a>.</p></main>\n')
     out.append(FOOT)
