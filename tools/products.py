@@ -12,7 +12,7 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent / "public"
 
 # slug, name, tag, one-line summary, lede, what it does, your data, status, works with (slugs)
 PRODUCTS = [
-    dict(slug="chat", name="Rafiq Najwa", tag="Phase 1",
+    dict(slug="chat", name="Najwa", tag="Phase 1",
          summary="A private chatbot that runs on your own machine and tells you which model answered and where.",
          lede="A chatbot for your terminal first, then desktop and web. It talks to a model on your own computer by default and keeps your conversations and memory as files you can read.",
          does=["Chat from the command line, in one shot or interactively, with answers streamed as they arrive.",
@@ -21,9 +21,9 @@ PRODUCTS = [
                "Consent in place: when a cloud model needs permission, you see exactly what would be sent and approve or decline on the spot.",
                "History and export as plain Markdown and JSON."],
          data="Conversations and memory stay on your device. Nothing reaches a cloud model unless you grant that specific flow, and every grant is listed in one place and can be withdrawn.",
-         status="The command-line client exists and is tested against Rafiq Qalb. Desktop and web follow in Phase 1. The repository opens publicly at the first installable milestone.",
+         status="The command-line client exists and is tested against Qalb. Desktop and web follow in Phase 1. The repository opens publicly at the first installable milestone.",
          works=["core", "hub", "assistant"]),
-    dict(slug="study", name="Rafiq Hikma", tag="Phase 2",
+    dict(slug="study", name="Hikma", tag="Phase 2",
          summary="Lessons become transcripts, flashcards and a tutor that cites its sources, with study plans and a clear view for parents.",
          lede="A study companion for any course, any school and any family. It turns lessons and documents into material to revise from, answers questions only from what was actually taught, and helps parents follow and plan their children's learning.",
          does=["Transcripts, summaries, glossaries, flashcards and quizzes from lecture recordings and course documents.",
@@ -46,9 +46,9 @@ PRODUCTS = [
                "Suggestions are text. Acting on one, such as moving an event or replying, is a separate permission.",
                "A missing permission produces a skipped section, never a nag."],
          data="Connectors contact only the hosts named on their consent card. Credentials live in the vault, never in the grant. Every call is written to an audit log you can read.",
-         status="Phase 3. A reference briefing with file, calendar, mail and feed connectors works today against Rafiq Qalb.",
+         status="Phase 3. A reference briefing with file, calendar, mail and feed connectors works today against Qalb.",
          works=["core", "chat", "tv"]),
-    dict(slug="mobile", name="Rafiq Jawwal", tag="Phase 3",
+    dict(slug="mobile", name="Jawwal", tag="Phase 3",
          summary="Rafiq on your phone, with small models on the device and encrypted sync to your own Markaz.",
          lede="The companion on Android and iOS: chat, voice, your study material and your daily briefing, working without a cloud account.",
          does=["Chat and voice with a small model that runs on the phone.",
@@ -77,7 +77,7 @@ PRODUCTS = [
          data="The app does not request the internet permission, so it cannot send anything anywhere. It asks for no storage permission either: it sees only the folder you chose.",
          status="In development for Android and Android Auto.",
          works=["lamha", "car"]),
-    dict(slug="os", name="Rafiq Nizam", tag="Phase 4",
+    dict(slug="os", name="Nizam", tag="Phase 4",
          summary="An AI-first desktop: one command surface where you say what you want and agents do it, with every permission visible.",
          lede="A refreshed GNOME desktop whose front door is a single command palette. Type what you want in your own words, and Rafiq does it with the machine's own capabilities, inside limits you can see.",
          does=["One shortcut raises the palette: launch, find, arrange windows, change settings, or ask in plain language.",
@@ -88,7 +88,7 @@ PRODUCTS = [
          data="A tool that lies about what it needs gains nothing: it runs with a filesystem that contains only the granted paths and a network that reaches only the granted hosts. Every decision is logged.",
          status="Phase 4. The Linux sandbox and the agent runtime are built and tested. The palette and the desktop image are designed, not yet built.",
          works=["core", "firewall", "assistant"]),
-    dict(slug="firewall", name="Rafiq Hisn", tag="Phase 4",
+    dict(slug="firewall", name="Hisn", tag="Phase 4",
          summary="A next-generation firewall with on-device AI that explains itself, for your laptop, desktop and home.",
          lede="It learns what normal traffic looks like for each app and device, blocks the usual suspicious activity out of the box, and helps you write rules in plain language.",
          does=["Shows what is talking to whom, per app and per device.",
@@ -99,7 +99,7 @@ PRODUCTS = [
          data="It records connection details such as addresses, names, sizes and timing. It never stores the contents of your traffic. The models run on your own hardware, and nothing is reported anywhere unless you opt in.",
          status="Phase 4. Designed, not yet built.",
          works=["core", "hub", "os"]),
-    dict(slug="car", name="Rafiq Qafila", tag="Later",
+    dict(slug="car", name="Qafila", tag="Later",
          summary="Cars that cooperate to avoid accidents and traffic, with no central map of who is where.",
          lede="Rafiq in each car. Cars that run it share hazards, intentions and congestion with one another, so each driver learns sooner what the cars ahead already know.",
          does=["Warnings about what you cannot see yet: a stopped vehicle around the bend, sudden braking ahead, a reported hazard.",
@@ -109,7 +109,7 @@ PRODUCTS = [
          data="What leaves the car is a small, signed, short-lived message you can read. Identities rotate every few minutes, shared knowledge travels as aggregates, and no party outside the car holds a record of where it has been.",
          status="Later, from the second half of 2028. Designed, not yet built. The first releases only advise the driver. Anything that influences steering, braking or acceleration waits for a safety case and a certified vehicle interface.",
          works=["core", "hub", "manzar"]),
-    dict(slug="tv", name="Rafiq Majlis", tag="Incubating",
+    dict(slug="tv", name="Majlis", tag="Incubating",
          summary="A living-room front end for Android TV and Google TV, fed by the household's own server.",
          lede="One shared screen for the household: your own film and show library, your photos, and each person's day behind their own profile.",
          does=["Library and title pages with resume, trailers, cast, reviews and a parents' guide.",
@@ -118,9 +118,9 @@ PRODUCTS = [
                "Each person's day: a short brief, mail, calendar and messages.",
                "Photos: memories, albums, people and places from the household library."],
          data="Everything personal comes from the household's own server over the home network. Mail is shown without fetching anything from the internet, so a sender cannot tell that a message was opened. It plays what is already in your library and does not search for or download titles.",
-         status="Incubating: it runs in one household today and is not yet a supported product. It has not been connected to Rafiq Qalb yet.",
+         status="Incubating: it runs in one household today and is not yet a supported product. It has not been connected to Qalb yet.",
          works=["hub", "assistant"]),
-    dict(slug="home", name="Rafiq Dar", tag="Later",
+    dict(slug="home", name="Dar", tag="Later",
          summary="Your home's own brain: devices, power, cameras and groceries, run in the house and connected to everything else Rafiq does.",
          lede="A home-automation hub that runs on your own server. Control the house in plain language, manage your power, keep an eye on the cameras and never run out of milk, without a vendor's cloud in the middle.",
          does=["Lights, heating, locks, sensors and appliances in one place, working with the smart devices you already own.",
@@ -128,11 +128,11 @@ PRODUCTS = [
                "Power: solar, battery, grid and what is using what, with suggestions for when to run the heavy loads and a plan for outages.",
                "Cameras that record and detect inside the house. Footage is not uploaded anywhere.",
                "Groceries: what is running low, the shopping list, and what you can cook tonight.",
-               "Part of the suite: cameras on the TV, the house in your morning briefing, new devices kept in check by Rafiq Hisn, energy and grocery costs in your budget."],
+               "Part of the suite: cameras on the TV, the house in your morning briefing, new devices kept in check by Hisn, energy and grocery costs in your budget."],
          data="Everything runs on your Markaz. Unlocking a door, opening the garage or switching off an alarm always needs a person to confirm it, and can never be done by a schedule or an agent on its own. Face recognition is off unless you turn it on. Camera clips are encrypted, kept for days rather than months, and every viewing is logged.",
          status="Later, from 2029. Designed, not yet built.",
          works=["hub", "tv", "firewall", "finance"]),
-    dict(slug="finance", name="Rafiq Mizan", tag="Later",
+    dict(slug="finance", name="Mizan", tag="Later",
          summary="All your accounts, cards and loans in one private ledger, with advice that knows your situation.",
          lede="See every account, transaction and loan in one place, kept on your own device. Then ask it things: where the money goes, how to reach a goal sooner, and whether a purchase is worth it right now.",
          does=["One ledger for bank accounts, cards, loans, recurring bills and net worth over time.",
@@ -144,7 +144,7 @@ PRODUCTS = [
          data="Your finances stay on your device, encrypted. Connections to banks are read-only by design: Rafiq can see your accounts and can never move your money. You can run it entirely from files you import and never connect a bank. It explains and reasons from your own numbers; it is not regulated financial advice and does not sell you products.",
          status="Later, from 2029. Designed, not yet built.",
          works=["core", "assistant", "home", "mobile"]),
-    dict(slug="core", name="Rafiq Qalb", tag="Foundation",
+    dict(slug="core", name="Qalb", tag="Foundation",
          summary="The shared engine behind every Rafiq product: models, memory, permissions and an audit log.",
          lede="One service on your device that every Rafiq product talks to. It routes requests to models, stores your data encrypted, and decides what is allowed to leave.",
          does=["A model gateway that treats local and cloud models alike and labels every answer with the model and where it ran.",
@@ -156,9 +156,9 @@ PRODUCTS = [
          data="Qalb is where the promises are enforced. A request to a provider you have not granted is refused before anything is sent, and the refusal itself is logged.",
          status="Built and tested: gateway, permissions, consent flow, audit log, encrypted storage, memory, scheduling and the local API.",
          works=["hub", "chat", "assistant", "os"]),
-    dict(slug="hub", name="Rafiq Markaz", tag="Foundation",
-         summary="Rafiq Qalb as a one-command server for a household, a school or a team.",
-         lede="A small server you run yourself. It packages Rafiq Qalb with a local model server so everyone at home, or in a class, shares one private companion.",
+    dict(slug="hub", name="Markaz", tag="Foundation",
+         summary="Qalb as a one-command server for a household, a school or a team.",
+         lede="A small server you run yourself. It packages Qalb with a local model server so everyone at home, or in a class, shares one private companion.",
          does=["One command to start, using Docker Compose.",
                "A local model server included, on CPU or on a graphics card.",
                "An optional larger database for many users.",
@@ -383,7 +383,7 @@ TOURS = {
   [
    "One gate",
    "Every product goes through Qalb. A model on this device needs no permission; a cloud model needs your grant.",
-   "Four products feed into Rafiq Qalb, which connects freely to a local model and through a lock to a cloud model."
+   "Four products feed into Qalb, which connects freely to a local model and through a lock to a cloud model."
   ],
   [
    "Your grants",
@@ -399,7 +399,7 @@ TOURS = {
  "hub": [
   [
    "One command",
-   "Start it and you have Rafiq Qalb, a model server and a database running on your own machine.",
+   "Start it and you have Qalb, a model server and a database running on your own machine.",
    "A terminal showing docker compose up and three services started."
   ],
   [
@@ -423,7 +423,7 @@ E = html.escape
 
 HEAD = """<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{title} | Rafiq</title><meta name="description" content="{desc}">
-<link rel="stylesheet" href="/assets/site.css?v=20261122"><link rel="icon" href="/assets/favicon-32.png" sizes="32x32"><link rel="icon" href="/assets/icon-192.png" sizes="192x192"><link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="stylesheet" href="/assets/site.css?v=20261123"><link rel="icon" href="/assets/favicon-32.png" sizes="32x32"><link rel="icon" href="/assets/icon-192.png" sizes="192x192"><link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <meta property="og:title" content="{title} | Rafiq"><meta property="og:description" content="{desc}"><meta property="og:image" content="https://rafiqsystems.com/assets/social-card.png"><meta property="og:type" content="website"><meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0b0b1f"></head><body><div class="wrap">
 <header class="top"><a class="brand" href="/"><img src="/assets/icon-64.png" alt="" width="40" height="40">Rafiq</a>

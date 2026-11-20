@@ -412,7 +412,7 @@ def manzar_3():
 
 
 def os_palette(extra, h):
-    g = R(0, 0, W, 34, 0, DEEP, op=.55) + T(24, 23, "Rafiq Nizam", 13, MUTED, 700) + T(W - 24, 23, "Fri 09:41", 13, MUTED, 400, "end")
+    g = R(0, 0, W, 34, 0, DEEP, op=.55) + T(24, 23, "Nizam", 13, MUTED, 700) + T(W - 24, 23, "Fri 09:41", 13, MUTED, 400, "end")
     g += C(W - 232, 18, 5, GOOD) + T(W - 220, 23, "2 grants live", 12.5, GOOD, 600)
     g += R(176, 96, 620, h, 18, "#000000", op=.4) + R(170, 86, 620, h, 18, "#14143a", VIOLET, 1.6)
     return g + extra
@@ -575,7 +575,7 @@ def core_1():
     g = ""
     for i, s in enumerate(["Chat", "Study", "Assistant", "OS"]):
         g += node(70, 120 + i * 96, 150, 60, s, VIOLET) + arrow(224, 150 + i * 96, 350, 280 + (i - 1.5) * 26, VIOLET, sw=2)
-    g += R(356, 150, 250, 300, 22, "#16163c", CYAN, 2) + T(481, 190, "Rafiq Qalb", 20, TEXT, 700, "middle")
+    g += R(356, 150, 250, 300, 22, "#16163c", CYAN, 2) + T(481, 190, "Qalb", 20, TEXT, 700, "middle")
     for i, (s, col) in enumerate([("model gateway", CYAN), ("permissions", PINK), ("encrypted store", VIOLET), ("audit log", GOOD)]):
         g += R(380, 212 + i * 54, 202, 42, 10, CARD, col, 1.3) + T(481, 238 + i * 54, s, 14.5, TEXT, 600, "middle")
     g += node(720, 150, 180, 70, "Model on this device", GOOD, "no permission needed") + arrow(610, 250, 716, 196, GOOD)
@@ -667,7 +667,7 @@ def study_4():
 
 
 def home_1():
-    g = window(80, 50, 800, 500, "Rafiq Dar")
+    g = window(80, 50, 800, 500, "Dar")
     g += T(110, 124, "Good evening", 22, TEXT, 700) + T(110, 148, "Everyone is home. All doors locked.", 14, GOOD)
     tiles = [("Living room", "Lights on · 40%", WARN), ("Heating", "21° · holding", PINK), ("Front door", "Locked", GOOD), ("Washer", "Done 10 min ago", CYAN),
              ("Kitchen", "Lights off", MUTED), ("Power", "Solar 2.1 kW · battery 86%", GOOD), ("Garage", "Closed", GOOD), ("Study", "Quiet hours until 19:00", VIOLET)]
