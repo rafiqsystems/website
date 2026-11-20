@@ -141,6 +141,214 @@ PRODUCTS = [
          works=["core", "study", "mobile", "firewall"]),
 ]
 
+# Three scenes per product: (tab label, caption, alt text). Pictures come from tools/art.py.
+TOURS = {
+ "chat": [
+  [
+   "Ask",
+   "Ask in your own words. The answer streams in, and a badge says which model ran and that it stayed on your computer.",
+   "A chat window with a question, a streamed answer, and badges reading: ran on this device, nothing left your computer."
+  ],
+  [
+   "Decide",
+   "Want a bigger cloud model? Rafiq shows exactly what would be sent and to whom, and waits. Nothing has left yet.",
+   "A consent card listing what a cloud model would receive, with Allow and Not now buttons."
+  ],
+  [
+   "Remember",
+   "Memory is one document you own. Read it, edit a line, delete a line, export it.",
+   "A plain text memory document with headings for About me, Preferences and Notes."
+  ]
+ ],
+ "study": [
+  [
+   "Listen",
+   "A lecture becomes a transcript you can search, with a summary, glossary and quiz beside it.",
+   "A lecture video with a timeline and a transcript, one passage highlighted at 12:31."
+  ],
+  [
+   "Revise",
+   "Flashcards and quizzes are made from what was actually taught.",
+   "A flashcard asking a question, with a Show answer button and progress dots."
+  ],
+  [
+   "Ask",
+   "The tutor answers only from your course material and shows where each answer came from.",
+   "A tutor answer with two source labels: Lecture 4 at 12:31 and Notes page 18."
+  ]
+ ],
+ "assistant": [
+  [
+   "Your day",
+   "One page: calendar, mail that needs you, open tasks and a few headlines. Each section says where it came from.",
+   "A briefing page with four panels: Calendar, Mail, Tasks and News, each with a source line."
+  ],
+  [
+   "You decide",
+   "Before a connector touches anything, a card lists what it reads, sends, writes and keeps, and when it may run.",
+   "A consent card for a calendar connector listing reads, sends, writes, keeps and runs."
+  ],
+  [
+   "While you sleep",
+   "A scheduled briefing uses only what you allowed to run unattended. Everything else is skipped, and all of it is logged.",
+   "A schedule set for 06:30 daily beside a log showing two sources allowed and two skipped."
+  ]
+ ],
+ "mobile": [
+  [
+   "Ask anywhere",
+   "A small model on the phone answers without a connection.",
+   "A phone showing a short chat, with a label reading on this phone."
+  ],
+  [
+   "Today",
+   "Your briefing, mail that needs you, tasks and flashcards due, in one list.",
+   "A phone showing a Today list with four items from calendar, mail, notes and study."
+  ],
+  [
+   "Sync privately",
+   "Your phone and your Hub exchange only encrypted data. The relay in between cannot read it.",
+   "A diagram: your phone, a relay that sees only ciphertext, and your Hub at home, joined by locked arrows."
+  ]
+ ],
+ "lamha": [
+  [
+   "Mark up",
+   "Highlight, circle and write on any PDF or image with a finger, stylus or mouse.",
+   "A document with a highlighted line, a hand-drawn circle and the note check this, beside page thumbnails."
+  ],
+  [
+   "Write",
+   "Notebooks with ruled, grid or plain paper. Pressure-sensitive ink for a stylus.",
+   "A ruled notebook page with handwriting, a triangle sketch and a formula."
+  ],
+  [
+   "Fill and share",
+   "Fill in forms, sign, and share a copy with location data stripped out.",
+   "A filled-in form with a signature, beside a share panel confirming location was removed."
+  ]
+ ],
+ "manzar": [
+  [
+   "Your folder",
+   "Pick one folder. That is the whole library. No account, no scanning.",
+   "A phone showing a video library grid, with labels: no internet permission, no storage permission."
+  ],
+  [
+   "Play",
+   "A clean player for the videos you already have.",
+   "A video player with a pause button, a progress bar and the title Coast trip."
+  ],
+  [
+   "In the car",
+   "The same queue continues on the car display. One player, so nothing restarts.",
+   "A phone connected to a car display showing the same video, with an Up next list."
+  ]
+ ],
+ "os": [
+  [
+   "Say it",
+   "One shortcut raises the palette. Type a command or just say what you want done.",
+   "A command palette with a typed request and four suggested actions, the first being Do it for me."
+  ],
+  [
+   "Approve",
+   "An agent does the steps and stops to ask before it touches a folder or reaches a server.",
+   "A progress list with two finished steps, above a card asking permission to read, write and reach specific places."
+  ],
+  [
+   "See everything",
+   "A live panel lists what Rafiq can reach right now. Revoke any row. Everything else does not exist to it.",
+   "A panel titled What Rafiq can see right now, with Files and Network rows that have Revoke buttons."
+  ]
+ ],
+ "firewall": [
+  [
+   "Watch",
+   "See which app is talking to which address, and what was stopped.",
+   "Apps on the left connected to internet addresses on the right; two connections are crossed out as blocked."
+  ],
+  [
+   "Onboard",
+   "A new device joins. Rafiq works out what it is and proposes sensible rules for you to approve.",
+   "A printer icon beside a card proposing two allow rules and two block rules."
+  ],
+  [
+   "Understand",
+   "Every block comes with a reason you can read, and a way to say it was you.",
+   "A card explaining a blocked connection, with a chart showing one spike far above the usual range."
+  ]
+ ],
+ "car": [
+  [
+   "Be warned",
+   "Your car hears about a hazard from the cars ahead before you can see it. It advises; you drive.",
+   "A car display warning Stopped vehicle ahead, 400 metres, with a suggested speed."
+  ],
+  [
+   "Cars cooperate",
+   "A stopped car tells the cars behind it, and they pass it on. Messages are signed, short-lived and go car to car.",
+   "A road seen from above: a stopped car sends dotted signals back to three other cars."
+  ],
+  [
+   "Flow together",
+   "Route and departure advice is worked out in your car from what nearby cars shared, so traffic eases for everyone.",
+   "A map with two routes; a card recommends leaving at 07:40 by the river road."
+  ]
+ ],
+ "tv": [
+  [
+   "Who is watching",
+   "A shared lock screen. Each person opens their profile with a short pattern on the remote.",
+   "A television lock screen with the time, the weather and four profile circles."
+  ],
+  [
+   "Watch",
+   "Your own library with resume, trailers and details.",
+   "A television showing two rows of posters: Continue watching and Recently added."
+  ],
+  [
+   "Your day",
+   "Behind your profile: a short brief, your mail and your calendar, from your own server.",
+   "A television showing one person's brief, calendar and mail."
+  ]
+ ],
+ "core": [
+  [
+   "One gate",
+   "Every product goes through Core. A model on this device needs no permission; a cloud model needs your grant.",
+   "Four products feed into Rafiq Core, which connects freely to a local model and through a lock to a cloud model."
+  ],
+  [
+   "Your grants",
+   "Everything that may leave your device is on one list. Revoke any of it at any time.",
+   "A list of grants with their status and Revoke buttons; one has expired."
+  ],
+  [
+   "The record",
+   "Every decision is logged, and each entry seals the one before it, so a missing or altered entry shows.",
+   "Four linked log entries reading allow, deny, grant, allow, and a banner saying all 44 entries verified."
+  ]
+ ],
+ "hub": [
+  [
+   "One command",
+   "Start it and you have Rafiq Core, a model server and a database running on your own machine.",
+   "A terminal showing docker compose up and three services started."
+  ],
+  [
+   "At home",
+   "Laptops, phones, the TV and tablets all talk to one small server inside the house.",
+   "A house outline with a Hub in the middle connected to a laptop, phone, TV and tablet; a crossed-out cloud."
+  ],
+  [
+   "For everyone",
+   "One Hub and one model shared by a household or a class, each person with their own memory and permissions.",
+   "One Hub connected to three people, each with their own lock."
+  ]
+ ]
+}
+
 BY_SLUG = {p["slug"]: p for p in PRODUCTS}
 E = html.escape
 
@@ -161,18 +369,34 @@ FOOT = """<footer><div class="cols"><div><strong>Rafiq Systems</strong><br>Priva
 
 
 def card(p):
-    return ('<a class="card link" href="/products/{slug}/"><span class="tag">{tag}</span><h3>{name}</h3><p>{summary}</p></a>'
+    return ('<a class="card link shot" href="/products/{slug}/"><img src="/assets/products/{slug}-1.svg" alt="" width="960" height="600" loading="lazy">'
+            '<span class="tag">{tag}</span><h3>{name}</h3><p>{summary}</p></a>'
             .format(slug=p["slug"], tag=E(p["tag"]), name=E(p["name"]), summary=E(p["summary"])))
+
+
+def tour(steps, heading="See how it works"):
+    """A click-through walkthrough built from radio buttons and CSS only. steps: (slug, n, tab, caption, alt)."""
+    out = ['<section class="tour" aria-label="{}"><h2>{}</h2><p class="hint">Pick a step.</p>\n'.format(E(heading), E(heading))]
+    for i in range(len(steps)):
+        out.append('<input class="tour-r" type="radio" name="tour" id="s{0}"{1}>'.format(i + 1, " checked" if i == 0 else ""))
+    out.append('\n<div class="tour-tabs">' + "".join('<label for="s{0}"><b>{0}</b>{1}</label>'.format(i + 1, E(st[2])) for i, st in enumerate(steps)) + "</div>\n")
+    out.append('<div class="tour-stage">\n')
+    for i, (slug, n, tab, cap, alt) in enumerate(steps):
+        out.append('<figure class="tour-p p{0}"><img src="/assets/products/{1}-{2}.svg" alt="{3}" width="960" height="600"{4}><figcaption><strong>{5}.</strong> {6}</figcaption></figure>\n'
+                   .format(i + 1, slug, n, E(alt, quote=True), "" if i == 0 else ' loading="lazy"', E(tab), E(cap)))
+    out.append("</div></section>\n")
+    return "".join(out)
 
 
 def page(p):
     out = [HEAD.format(title=E(p["name"]), desc=E(p["summary"], quote=True))]
     out.append('<main class="prose product"><p class="crumbs"><a href="/products/">Products</a> / {}</p>\n'.format(E(p["name"])))
     out.append('<span class="tag">{}</span><h1>{}</h1><p class="lede">{}</p>\n'.format(E(p["tag"]), E(p["name"]), E(p["lede"])))
+    out.append("</main>\n" + tour([(p["slug"], i + 1, t, c, a) for i, (t, c, a) in enumerate(TOURS[p["slug"]])]) + '<div class="prose">\n')
     out.append("<h2>What it does</h2>\n<ul>\n" + "".join("<li>{}</li>\n".format(E(d)) for d in p["does"]) + "</ul>\n")
     out.append("<h2>Your data</h2>\n<p>{}</p>\n".format(E(p["data"])))
     out.append('<h2>Status</h2>\n<p class="note">{}</p>\n'.format(E(p["status"])))
-    out.append('<h2>Works with</h2>\n</main>\n<div class="grid related">\n' + "\n".join(card(BY_SLUG[s]) for s in p["works"]) + "\n</div>\n")
+    out.append('<h2>Works with</h2>\n</div>\n<div class="grid related">\n' + "\n".join(card(BY_SLUG[s]) for s in p["works"]) + "\n</div>\n")
     out.append('<p class="back"><a href="/products/">All products</a> · <a href="/roadmap/">Roadmap</a> · <a href="/principles/">Principles</a></p>\n')
     out.append(FOOT)
     return "".join(out)
@@ -191,6 +415,7 @@ def main():
     for p in PRODUCTS:
         for s in p["works"]:
             assert s in BY_SLUG, (p["slug"], s)
+        assert len(TOURS[p["slug"]]) == 3, p["slug"]
         d = ROOT / "products" / p["slug"]
         d.mkdir(parents=True, exist_ok=True)
         (d / "index.html").write_text(page(p), encoding="utf-8")

@@ -22,6 +22,11 @@ npx wrangler deploy
 `python3 tools/products.py` from the repository root, and commit the result. The script needs only
 Python 3 and writes plain HTML with no scripts and no inline styles.
 
+The product pictures in `public/assets/products/` are drawn by `tools/art.py` (three scenes per
+product, plain SVG with no scripts or embedded styles). Each product page and the home page show
+them in a click-through walkthrough built from radio buttons and CSS; the captions are the `TOURS`
+list in `tools/products.py`. Run `python3 tools/art.py` then `python3 tools/products.py` after a change.
+
 ## Headers and redirects
 
 `public/_headers` sets a strict Content-Security-Policy, no-referrer, HSTS and a one-week
