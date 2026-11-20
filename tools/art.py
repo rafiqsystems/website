@@ -315,14 +315,14 @@ def mobile_2():
     for i, (s, sub, col) in enumerate([("11:30  Dentist", "calendar", CYAN), ("Sara: Budget draft", "mail · needs a reply", PINK), ("Call the plumber", "notes", GOOD), ("Flashcards: 12 due", "study", VIOLET)]):
         y = 124 + i * 78
         g += R(375, y, 210, 66, 12, CARD, LINE, 1) + R(375, y, 5, 66, 2, col) + T(392, y + 28, s, 14, TEXT, 600) + T(392, y + 48, sub, 11.5, MUTED)
-    g += pills(388, 470, [("synced from your Hub", MUTED)], size=12)
+    g += pills(388, 470, [("synced from your Markaz", MUTED)], size=12)
     return g
 
 
 def mobile_3():
     g = phone(110, 150, 170, 320) + T(195, 300, "your", 15, MUTED, 400, "middle") + T(195, 322, "phone", 17, TEXT, 700, "middle")
     g += node(410, 250, 150, 110, "relay", VIOLET, "sees only ciphertext")
-    g += R(690, 230, 170, 150, 14, CARD, CYAN, 1.6) + T(775, 296, "your Hub", 17, TEXT, 700, "middle") + T(775, 320, "at home", 13, MUTED, 400, "middle")
+    g += R(690, 230, 170, 150, 14, CARD, CYAN, 1.6) + T(775, 296, "your Markaz", 17, TEXT, 700, "middle") + T(775, 320, "at home", 13, MUTED, 400, "middle")
     for y in (350, 362):
         g += C(712, y, 3, GOOD) + R(722, y - 2, 110, 4, 2, LINE)
     g += arrow(290, 305, 402, 305, CYAN) + arrow(568, 305, 682, 305, CYAN)
@@ -412,7 +412,7 @@ def manzar_3():
 
 
 def os_palette(extra, h):
-    g = R(0, 0, W, 34, 0, DEEP, op=.55) + T(24, 23, "Rafiq OS", 13, MUTED, 700) + T(W - 24, 23, "Fri 09:41", 13, MUTED, 400, "end")
+    g = R(0, 0, W, 34, 0, DEEP, op=.55) + T(24, 23, "Rafiq Nizam", 13, MUTED, 700) + T(W - 24, 23, "Fri 09:41", 13, MUTED, 400, "end")
     g += C(W - 232, 18, 5, GOOD) + T(W - 220, 23, "2 grants live", 12.5, GOOD, 600)
     g += R(176, 96, 620, h, 18, "#000000", op=.4) + R(170, 86, 620, h, 18, "#14143a", VIOLET, 1.6)
     return g + extra
@@ -575,7 +575,7 @@ def core_1():
     g = ""
     for i, s in enumerate(["Chat", "Study", "Assistant", "OS"]):
         g += node(70, 120 + i * 96, 150, 60, s, VIOLET) + arrow(224, 150 + i * 96, 350, 280 + (i - 1.5) * 26, VIOLET, sw=2)
-    g += R(356, 150, 250, 300, 22, "#16163c", CYAN, 2) + T(481, 190, "Rafiq Core", 20, TEXT, 700, "middle")
+    g += R(356, 150, 250, 300, 22, "#16163c", CYAN, 2) + T(481, 190, "Rafiq Qalb", 20, TEXT, 700, "middle")
     for i, (s, col) in enumerate([("model gateway", CYAN), ("permissions", PINK), ("encrypted store", VIOLET), ("audit log", GOOD)]):
         g += R(380, 212 + i * 54, 202, 42, 10, CARD, col, 1.3) + T(481, 238 + i * 54, s, 14.5, TEXT, 600, "middle")
     g += node(720, 150, 180, 70, "Model on this device", GOOD, "no permission needed") + arrow(610, 250, 716, 196, GOOD)
@@ -612,7 +612,7 @@ def core_3():
 
 def hub_1():
     g = window(120, 80, 720, 420, "terminal")
-    lines = [("$ docker compose up -d", TEXT), ("", TEXT), ("✔ rafiq core            started", GOOD), ("✔ model server          started", GOOD), ("✔ database              started", GOOD), ("", TEXT),
+    lines = [("$ docker compose up -d", TEXT), ("", TEXT), ("✔ rafiq qalb            started", GOOD), ("✔ model server          started", GOOD), ("✔ database              started", GOOD), ("", TEXT),
              ("listening on this machine only", MUTED), ("no account needed · no secrets in the config", MUTED), ("", TEXT), ("$ ", TEXT)]
     for i, (s, col) in enumerate(lines):
         g += T(156, 156 + i * 30, s, 16, col, 500, font=MONO)
@@ -622,7 +622,7 @@ def hub_1():
 
 def hub_2():
     g = P("M210 300 L480 110 L750 300", VIOLET, 4, op=.7) + R(250, 300, 460, 220, 6, "none", VIOLET, 3, op=.7)
-    g += R(420, 340, 120, 110, 14, "#16163c", CYAN, 2) + T(480, 388, "Hub", 20, TEXT, 700, "middle") + C(450, 424, 4, GOOD) + C(466, 424, 4, GOOD) + R(480, 421, 44, 6, 3, LINE) + pulse(480, 318, 5, CYAN)
+    g += R(420, 340, 120, 110, 14, "#16163c", CYAN, 2) + T(480, 388, "Markaz", 17, TEXT, 700, "middle") + C(450, 424, 4, GOOD) + C(466, 424, 4, GOOD) + R(480, 421, 44, 6, 3, LINE) + pulse(480, 318, 5, CYAN)
     devs = [(290, 350, "laptop"), (290, 450, "phone"), (670, 350, "TV"), (670, 450, "tablet")]
     for x, y, s in devs:
         g += node(x - 50, y - 22, 100, 44, s, VIOLET) + L(x + (50 if x < 480 else -50), y, 420 if x < 480 else 540, 395, CYAN, 2, "5 6")
@@ -632,7 +632,7 @@ def hub_2():
 
 
 def hub_3():
-    g = R(380, 90, 200, 90, 16, "#16163c", CYAN, 2) + T(480, 132, "One Hub", 20, TEXT, 700, "middle") + T(480, 156, "one model, shared", 13, MUTED, 400, "middle")
+    g = R(380, 90, 200, 90, 16, "#16163c", CYAN, 2) + T(480, 132, "One Markaz", 20, TEXT, 700, "middle") + T(480, 156, "one model, shared", 13, MUTED, 400, "middle")
     for i, (s, col) in enumerate([("Maya", CYAN), ("Leo", PINK), ("Sam", VIOLET)]):
         x = 110 + i * 270
         g += L(480, 182, x + 100, 250, col, 2, "5 6") + R(x, 252, 200, 220, 16, CARD, col, 1.6) + C(x + 100, 306, 30, DEEP, col, 2) + T(x + 100, 317, s[0], 26, col, 700, "middle")
@@ -667,7 +667,7 @@ def study_4():
 
 
 def home_1():
-    g = window(80, 50, 800, 500, "Rafiq Home")
+    g = window(80, 50, 800, 500, "Rafiq Dar")
     g += T(110, 124, "Good evening", 22, TEXT, 700) + T(110, 148, "Everyone is home. All doors locked.", 14, GOOD)
     tiles = [("Living room", "Lights on · 40%", WARN), ("Heating", "21° · holding", PINK), ("Front door", "Locked", GOOD), ("Washer", "Done 10 min ago", CYAN),
              ("Kitchen", "Lights off", MUTED), ("Power", "Solar 2.1 kW · battery 86%", GOOD), ("Garage", "Closed", GOOD), ("Study", "Quiet hours until 19:00", VIOLET)]
@@ -675,7 +675,7 @@ def home_1():
         x, y = 110 + (i % 4) * 186, 176 + (i // 4) * 112
         g += R(x, y, 172, 98, 14, CARD, col if col != MUTED else LINE, 1.4) + C(x + 26, y + 30, 10, col, op=.9) + T(x + 16, y + 64, a, 15, TEXT, 700) + T(x + 16, y + 84, b, 11.5, MUTED)
     g += R(110, 412, 730, 54, 14, "#14143a", VIOLET, 1.5) + C(140, 439, 9, "url(#brand)") + T(162, 444, "turn everything off downstairs except the hall light", 15.5, TEXT, 600) + cursor(162 + tw("turn everything off downstairs except the hall light", 15.5) - 14, 430, 17)
-    g += pills(110, 486, [("runs on your Hub", GOOD), ("works with the devices you already have", MUTED)], size=12)
+    g += pills(110, 486, [("runs on your Markaz", GOOD), ("works with the devices you already have", MUTED)], size=12)
     return g
 
 
