@@ -16,6 +16,12 @@ Manual deploy from a machine with wrangler logged in:
 npx wrangler deploy
 ```
 
+## Product pages
+
+`public/products/` is generated. Edit the `PRODUCTS` list in `tools/products.py`, run
+`python3 tools/products.py` from the repository root, and commit the result. The script needs only
+Python 3 and writes plain HTML with no scripts and no inline styles.
+
 ## Headers and redirects
 
 `public/_headers` sets a strict Content-Security-Policy, no-referrer, HSTS and a one-week

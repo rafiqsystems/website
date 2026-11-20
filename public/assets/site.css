@@ -37,3 +37,11 @@ footer a{color:var(--muted)}footer a:hover{color:var(--text)}
 code{font:.92em ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background:var(--bg2);padding:.1em .35em;border-radius:.3em}
 pre{background:var(--bg2);border:1px solid var(--line);border-radius:.6rem;padding:1rem;overflow:auto}
 .prose{max-width:48rem}.prose h2{font-size:1.5rem;margin-top:2rem}.prose h3{margin-top:1.4rem}
+.crumbs{color:var(--muted);font-size:.9rem;margin:0 0 1.2rem}
+.product h1{margin-top:.2rem}
+.prose ul{padding-left:1.2rem}.prose li{margin:.45rem 0}
+a.card.link{display:block;color:var(--text)}a.card.link:hover{text-decoration:none;border-color:var(--accent)}
+.grid.related{margin-top:.6rem}.grid.products{margin-top:2rem}
+.back{margin:2rem 0;color:var(--muted)}
+.fine{margin-top:1.4rem}
+.card h3 a{color:var(--text)}.card h3 a:hover{color:var(--accent)}
