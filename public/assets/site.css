@@ -58,11 +58,11 @@ a.card.link{display:block;color:var(--text)}a.card.link:hover{text-decoration:no
 .tour-tabs label{cursor:pointer;display:inline-flex;align-items:center;gap:.55rem;padding:.55rem 1rem .55rem .6rem;border-radius:2rem;border:1px solid var(--line);background:var(--card);color:var(--muted);font-weight:600;transition:color .15s ease,border-color .15s ease,background .15s ease}
 .tour-tabs label b{display:inline-grid;place-items:center;width:1.7rem;height:1.7rem;border-radius:50%;background:var(--bg2);color:var(--text);font-size:.85rem}
 .tour-tabs label:hover{color:var(--text);border-color:var(--accent)}
-#s1:checked~.tour-tabs label[for=s1],#s2:checked~.tour-tabs label[for=s2],#s3:checked~.tour-tabs label[for=s3]{color:#fff;border-color:transparent;background:linear-gradient(90deg,var(--cyan),var(--violet))}
-#s1:checked~.tour-tabs label[for=s1] b,#s2:checked~.tour-tabs label[for=s2] b,#s3:checked~.tour-tabs label[for=s3] b{background:rgba(11,11,31,.55);color:#fff}
-#s1:focus-visible~.tour-tabs label[for=s1],#s2:focus-visible~.tour-tabs label[for=s2],#s3:focus-visible~.tour-tabs label[for=s3]{outline:2px solid var(--text);outline-offset:3px}
+#s1:checked~.tour-tabs label[for=s1],#s2:checked~.tour-tabs label[for=s2],#s3:checked~.tour-tabs label[for=s3],#s4:checked~.tour-tabs label[for=s4]{color:#fff;border-color:transparent;background:linear-gradient(90deg,var(--cyan),var(--violet))}
+#s1:checked~.tour-tabs label[for=s1] b,#s2:checked~.tour-tabs label[for=s2] b,#s3:checked~.tour-tabs label[for=s3] b,#s4:checked~.tour-tabs label[for=s4] b{background:rgba(11,11,31,.55);color:#fff}
+#s1:focus-visible~.tour-tabs label[for=s1],#s2:focus-visible~.tour-tabs label[for=s2],#s3:focus-visible~.tour-tabs label[for=s3],#s4:focus-visible~.tour-tabs label[for=s4]{outline:2px solid var(--text);outline-offset:3px}
 .tour-p{display:none;margin:0}
-#s1:checked~.tour-stage .p1,#s2:checked~.tour-stage .p2,#s3:checked~.tour-stage .p3{display:block;animation:tour-in .35s ease}
+#s1:checked~.tour-stage .p1,#s2:checked~.tour-stage .p2,#s3:checked~.tour-stage .p3,#s4:checked~.tour-stage .p4{display:block;animation:tour-in .35s ease}
 .tour-p img{display:block;width:100%;height:auto;border-radius:1rem;border:1px solid var(--line);box-shadow:0 20px 50px rgba(0,0,0,.4)}
 .tour-p figcaption{color:var(--muted);margin:.9rem 0 0;font-size:1.05rem;max-width:46rem}.tour-p figcaption strong{color:var(--text)}
 @keyframes tour-in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}

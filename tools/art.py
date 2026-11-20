@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Draws the product illustrations: public/assets/products/<slug>-<n>.svg (three scenes per product).
+"""Draws the product illustrations: public/assets/products/<slug>-<n>.svg (three or four scenes per product).
 
 Run from the repository root:  python3 tools/art.py
 Plain SVG with presentation attributes only: no scripts, no <style>, no external references, so the
@@ -642,11 +642,122 @@ def hub_3():
     return g
 
 
+def study_4():
+    g = window(80, 50, 800, 500, "For parents · this week")
+    for i, (name, col, pct, sub, due) in enumerate([("Leo · Year 8", PINK, .72, "Maths, Science, History", "Maths test Thursday"), ("Maya · Year 5", CYAN, .9, "Reading, Maths", "Reading log due Friday")]):
+        x = 104 + i * 388
+        g += R(x, 106, 364, 190, 14, CARD, col, 1.4) + C(x + 62, 170, 38, "none", LINE, 8)
+        import math
+        a = 2 * math.pi * pct
+        ex, ey = x + 62 + 38 * math.sin(a), 170 - 38 * math.cos(a)
+        g += P(f"M{x + 62} 132 A38 38 0 {1 if pct > .5 else 0} 1 {ex:.1f} {ey:.1f}", col, 8) + T(x + 62, 177, f"{int(pct * 100)}%", 17, TEXT, 700, "middle")
+        g += T(x + 122, 150, name, 18, TEXT, 700) + T(x + 122, 174, sub, 13, MUTED) + T(x + 122, 198, "of this week's plan done", 12.5, MUTED)
+        g += pills(x + 18, 246, [(due, WARN)], size=12.5)
+    g += T(104, 336, "Leo's plan", 15, TEXT, 700) + T(868, 336, "made from his syllabus and the family calendar", 12.5, MUTED, 400, "end")
+    days = ["Mon", "Tue", "Wed", "Thu", "Fri"]
+    cells = [("Fractions", GOOD, 1), ("Forces", GOOD, 1), ("Fractions quiz", CYAN, 0), ("Test", WARN, 0), ("History notes", MUTED, 0)]
+    for i, (d, (s2, col, done)) in enumerate(zip(days, cells)):
+        x = 104 + i * 152
+        g += T(x + 70, 366, d, 12.5, MUTED, 600, "middle") + R(x, 376, 140, 58, 10, CARD, col, 1.3) + T(x + 70, 410, s2, 13.5, TEXT, 600, "middle")
+        if done:
+            g += C(x + 124, 390, 8, DEEP, GOOD, 1.5) + P(f"M{x + 120} 390 l3 3 l6 -7", GOOD, 1.8)
+    g += pills(104, 466, [("Fractions are not sticking yet", PINK), ("Explain it to me so I can help", CYAN)], size=12.5)
+    g += T(868, 520, "Leo sees exactly what you see", 12.5, GOOD, 600, "end")
+    return g
+
+
+def home_1():
+    g = window(80, 50, 800, 500, "Rafiq Home")
+    g += T(110, 124, "Good evening", 22, TEXT, 700) + T(110, 148, "Everyone is home. All doors locked.", 14, GOOD)
+    tiles = [("Living room", "Lights on · 40%", WARN), ("Heating", "21° · holding", PINK), ("Front door", "Locked", GOOD), ("Washer", "Done 10 min ago", CYAN),
+             ("Kitchen", "Lights off", MUTED), ("Power", "Solar 2.1 kW · battery 86%", GOOD), ("Garage", "Closed", GOOD), ("Study", "Quiet hours until 19:00", VIOLET)]
+    for i, (a, b, col) in enumerate(tiles):
+        x, y = 110 + (i % 4) * 186, 176 + (i // 4) * 112
+        g += R(x, y, 172, 98, 14, CARD, col if col != MUTED else LINE, 1.4) + C(x + 26, y + 30, 10, col, op=.9) + T(x + 16, y + 64, a, 15, TEXT, 700) + T(x + 16, y + 84, b, 11.5, MUTED)
+    g += R(110, 412, 730, 54, 14, "#14143a", VIOLET, 1.5) + C(140, 439, 9, "url(#brand)") + T(162, 444, "turn everything off downstairs except the hall light", 15.5, TEXT, 600) + cursor(162 + tw("turn everything off downstairs except the hall light", 15.5) - 14, 430, 17)
+    g += pills(110, 486, [("runs on your Hub", GOOD), ("works with the devices you already have", MUTED)], size=12)
+    return g
+
+
+def home_2():
+    g = T(480, 84, "Power, right now", 20, TEXT, 700, "middle")
+    g += node(90, 150, 170, 80, "Solar", WARN, "2.1 kW") + node(90, 370, 170, 80, "Grid", MUTED, "0 kW · idle")
+    g += R(390, 230, 180, 140, 18, "#16163c", CYAN, 2) + T(480, 290, "Home", 20, TEXT, 700, "middle") + T(480, 316, "using 1.3 kW", 14, MUTED, 400, "middle")
+    g += node(700, 150, 170, 80, "Battery", GOOD, "86% · charging") + node(700, 370, 170, 80, "Car charger", VIOLET, "waiting for 13:00")
+    g += arrow(264, 200, 386, 270, WARN) + arrow(574, 270, 696, 200, GOOD) + arrow(264, 400, 386, 340, MUTED, "6 6") + arrow(574, 340, 696, 400, VIOLET, "6 6")
+    g += R(250, 474, 460, 100, 16, CARD, CYAN, 1.5) + T(274, 508, "Suggestion", 12.5, CYAN, 700) + T(274, 534, "Run the dishwasher at 13:00, when solar peaks.", 15.5, TEXT, 600) + T(274, 558, "In an outage: fridge, router and lights for 9 hours.", 13.5, MUTED)
+    g += pulse(325, 235, 5, WARN)
+    return g
+
+
+def home_3():
+    g = R(70, 80, 430, 440, 18, PANEL, LINE, 1.5) + T(94, 118, "Cameras", 17, TEXT, 700) + T(476, 118, "stored at home", 12.5, GOOD, 600, "end")
+    for i, (name, n) in enumerate([("Front door", 2), ("Garden", 0), ("Driveway", 3), ("Garage", 1)]):
+        x, y = 94 + (i % 2) * 196, 136 + (i // 2) * 150
+        g += R(x, y, 184, 112, 10, f"url(#poster{n + 1})", op=.55) + P(f"M{x} {y + 86} Q{x + 60} {y + 50} {x + 110} {y + 80} T{x + 184} {y + 70} V{y + 112} H{x} Z", "none", 0, DEEP, .5) + T(x + 6, y + 130, name, 12.5, MUTED)
+        g += C(x + 170, y + 14, 4, BAD)
+    g += R(94, 136, 184, 112, 10, "none", WARN, 2.5) + R(150, 176, 34, 60, 6, "none", WARN, 2) + T(104, 156, "Person · 14:02", 12, WARN, 700)
+    g += pills(94, 462, [("no face recognition unless you turn it on", MUTED)], size=11.5)
+    g += R(540, 80, 350, 440, 18, PANEL, LINE, 1.5) + T(564, 118, "Groceries", 17, TEXT, 700)
+    for i, (s2, sub, col) in enumerate([("Milk", "runs out Thursday", WARN), ("Eggs", "2 left", WARN), ("Rice", "plenty", GOOD), ("Coffee", "runs out next week", MUTED)]):
+        g += row(564, 136 + i * 56, 302, s2, sub, TEXT, None, col)
+    g += T(564, 386, "Shopping list", 13, MUTED, 600)
+    for i, s2 in enumerate(["Milk", "Eggs", "Tomatoes"]):
+        g += R(564 + i * 100, 398, 92, 34, 17, DEEP, CYAN, 1.2) + T(610 + i * 100, 420, s2, 13, CYAN, 600, "middle")
+    g += T(564, 470, "Tonight: you have everything for a vegetable curry.", 12.5, MUTED) + T(564, 492, "Rafiq writes the list. You do the buying.", 12.5, MUTED)
+    return g
+
+
+def finance_1():
+    g = window(80, 50, 800, 500, "Your money · this month")
+    g += R(104, 106, 300, 150, 14, "#16163c", VIOLET, 1.5) + T(124, 140, "Net worth", 13, MUTED, 600) + T(124, 184, "84,210", 34, TEXT, 700) + T(124, 212, "up 1,340 this month", 13.5, GOOD, 600)
+    g += P("M124 244 l30 -6 l30 2 l30 -10 l30 -2 l30 -12 l30 -4 l30 -10 l30 -6", GOOD, 2.5)
+    for i, (a, b, col) in enumerate([("Current account", "3,480", TEXT), ("Savings", "12,900", TEXT), ("Credit card", "-640", BAD), ("Car loan", "-9,200 · ends Mar 2029", WARN)]):
+        g += row(104, 276 + i * 54, 300, a, b, TEXT, None, col)
+    g += T(440, 124, "Where it went", 15, TEXT, 700)
+    for i, (a, v, col) in enumerate([("Housing", 1.0, VIOLET), ("Groceries", .52, CYAN), ("Transport", .34, PINK), ("Subscriptions", .2, WARN), ("Everything else", .44, MUTED)]):
+        y = 150 + i * 52
+        g += T(440, y + 14, a, 13.5, TEXT, 600) + R(440, y + 24, 400, 12, 6, LINE) + R(440, y + 24, 400 * v, 12, 6, col)
+    g += R(440, 420, 400, 70, 12, CARD, WARN, 1.3) + T(458, 448, "Noticed", 12, WARN, 700) + T(458, 472, "Two streaming subscriptions went unused for 3 months.", 13.5, TEXT)
+    g += pills(104, 500, [("kept on your device, encrypted", GOOD)], size=12)
+    return g
+
+
+def finance_2():
+    g = window(100, 50, 760, 500, "Ask before you buy")
+    b, h = bubble(430, 110, 400, ["Should I buy the 1,200 laptop now?"], True)
+    g += b
+    y = 110 + h + 20
+    g += R(130, y, 620, 330, 16, "#16163c", CYAN, 1.6) + T(154, y + 40, "Wait about six weeks", 24, TEXT, 700) + T(154, y + 66, "Here is the working, from your own numbers.", 13.5, MUTED)
+    for i, (label, text, col) in enumerate([("THIS MONTH", "It would leave 310 before the car loan payment on the 28th.", BAD), ("YOUR GOALS", "Your emergency fund is at 2.4 months; you set 3.", WARN),
+                                           ("COST PER USE", "About 0.80 a day over four years. Reasonable for work.", GOOD), ("IF YOU WAIT", "After the bonus on the 15th it fits without touching savings.", CYAN)]):
+        yy = y + 96 + i * 46
+        g += T(154, yy, label, 11, col, 700) + T(274, yy, text, 13.5, TEXT) + L(154, yy + 16, 726, yy + 16, LINE, 1)
+    g += button(154, y + 276, 150, "Remind me then", True) + button(316, y + 276, 190, "Show cheaper options")
+    g += T(726, y + 300, "explains; never decides for you", 12, MUTED, 400, "end")
+    return g
+
+
+def finance_3():
+    g = R(80, 80, 440, 440, 18, PANEL, LINE, 1.5) + T(106, 122, "Goals", 18, TEXT, 700)
+    for i, (a, v, sub, col) in enumerate([("Emergency fund", .8, "2.4 of 3 months · on track for February", GOOD), ("Summer holiday", .45, "1,350 of 3,000", CYAN), ("Car loan paid off", .62, "March 2029 · overpay 60 a month to finish 5 months early", VIOLET)]):
+        y = 150 + i * 110
+        g += T(106, y + 14, a, 15.5, TEXT, 700) + R(106, y + 28, 388, 14, 7, LINE) + R(106, y + 28, 388 * v, 14, 7, col) + T(106, y + 66, sub, 12.5, MUTED)
+    g += pills(106, 476, [("projections use your real spending", MUTED)], size=12)
+    g += R(550, 80, 340, 300, 18, PANEL, LINE, 1.5) + T(576, 122, "Coming up", 18, TEXT, 700)
+    for i, (a, b, col) in enumerate([("28th · Car loan", "410", TEXT), ("1st · Rent", "1,150", TEXT), ("3rd · Electricity", "about 96", MUTED), ("9th · Low balance likely", "top up 200", WARN)]):
+        g += row(576, 140 + i * 56, 290, a, b, TEXT, None, col)
+    g += R(550, 400, 340, 120, 18, "#16163c", GOOD, 1.6) + R(576, 432, 30, 26, 6, DEEP, GOOD, 2) + P("M583 432 v-8 a8 8 0 0 1 16 0 v8", GOOD, 2.2)
+    g += T(622, 444, "Read-only by design", 16, TEXT, 700) + T(622, 466, "Rafiq can see your accounts.", 12.5, MUTED) + T(622, 484, "It can never move your money.", 12.5, MUTED)
+    return g
+
+
 SCENES = {
-    "chat": [chat_1, chat_2, chat_3], "study": [study_1, study_2, study_3], "assistant": [assistant_1, assistant_2, assistant_3],
+    "chat": [chat_1, chat_2, chat_3], "study": [study_1, study_2, study_3, study_4], "assistant": [assistant_1, assistant_2, assistant_3],
     "mobile": [mobile_1, mobile_2, mobile_3], "lamha": [lamha_1, lamha_2, lamha_3], "manzar": [manzar_1, manzar_2, manzar_3],
     "os": [os_1, os_2, os_3], "firewall": [firewall_1, firewall_2, firewall_3], "car": [car_1, car_2, car_3],
-    "tv": [tv_1, tv_2, tv_3], "core": [core_1, core_2, core_3], "hub": [hub_1, hub_2, hub_3],
+    "tv": [tv_1, tv_2, tv_3], "home": [home_1, home_2, home_3], "finance": [finance_1, finance_2, finance_3],
+    "core": [core_1, core_2, core_3], "hub": [hub_1, hub_2, hub_3],
 }
 
 

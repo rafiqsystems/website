@@ -24,16 +24,19 @@ PRODUCTS = [
          status="The command-line client exists and is tested against Rafiq Core. Desktop and web follow in Phase 1. The repository opens publicly at the first installable milestone.",
          works=["core", "hub", "assistant"]),
     dict(slug="study", name="Rafiq Study", tag="Phase 2",
-         summary="Lectures become transcripts, summaries, flashcards and a tutor that cites its sources.",
-         lede="A study companion for any course and any school. It turns recordings and documents into material you can revise from, and answers questions only from what you were actually taught.",
+         summary="Lessons become transcripts, flashcards and a tutor that cites its sources, with study plans and a clear view for parents.",
+         lede="A study companion for any course, any school and any family. It turns lessons and documents into material to revise from, answers questions only from what was actually taught, and helps parents follow and plan their children's learning.",
          does=["Transcripts, summaries, glossaries, flashcards and quizzes from lecture recordings and course documents.",
                "A tutor that answers from your course material and cites the exact timestamp or page.",
                "Scanned and handwritten pages read with OCR.",
                "Pluggable engines for transcription, OCR, search and models, so a school can run everything on its own hardware or mix in cloud services it trusts.",
-               "Built for more than one language from the start."],
-         data="A school or a student can host it themselves. Course material, notes and questions stay on that server unless a cloud provider is switched on, and each provider is a visible, revocable grant.",
-         status="Phase 2. The ingestion pipeline and its provider interfaces are built and tested, with local and cloud engines behind the same interface.",
-         works=["core", "hub"]),
+               "Built for more than one language from the start.",
+               "For parents: each child's progress, what is due, and the topics that are not sticking yet, in one view.",
+               "Study plans made for the child from the syllabus, the school calendar and the family calendar, adjusted when a week goes badly.",
+               "Study guides and aids at the child's level: summaries, flashcards, practice quizzes, worked examples and audio recaps."],
+         data="A school, a family or a student can host it themselves. Course material, notes and questions stay on that server unless a cloud provider is switched on, and each provider is a visible, revocable grant. A child sees exactly what a parent can see about them. There is no advertising, no profiling and nothing designed to hook a child.",
+         status="Phase 2. The ingestion pipeline and its provider interfaces are built and tested, with local and cloud engines behind the same interface. The features for parents are designed, not yet built.",
+         works=["core", "hub", "assistant", "tv"]),
     dict(slug="assistant", name="Rafiq Assistant", tag="Phase 3",
          summary="A personal assistant for your day, with a grant behind every data source.",
          lede="One page that tells you what today looks like: your calendar, what needs attention in your inbox, open tasks from your notes, and a few headlines. Every line says where it came from.",
@@ -117,6 +120,30 @@ PRODUCTS = [
          data="Everything personal comes from the household's own server over the home network. Mail is shown without fetching anything from the internet, so a sender cannot tell that a message was opened. It plays what is already in your library and does not search for or download titles.",
          status="Incubating: it runs in one household today and is not yet a supported product. It has not been connected to Rafiq Core yet.",
          works=["hub", "assistant"]),
+    dict(slug="home", name="Rafiq Home", tag="Later",
+         summary="Your home's own brain: devices, power, cameras and groceries, run in the house and connected to everything else Rafiq does.",
+         lede="A home-automation hub that runs on your own server. Control the house in plain language, manage your power, keep an eye on the cameras and never run out of milk, without a vendor's cloud in the middle.",
+         does=["Lights, heating, locks, sensors and appliances in one place, working with the smart devices you already own.",
+               "Say what you want, or let Rafiq propose an automation and show you exactly what it would do before it runs.",
+               "Power: solar, battery, grid and what is using what, with suggestions for when to run the heavy loads and a plan for outages.",
+               "Cameras that record and detect inside the house. Footage is not uploaded anywhere.",
+               "Groceries: what is running low, the shopping list, and what you can cook tonight.",
+               "Part of the suite: cameras on the TV, the house in your morning briefing, new devices kept in check by the Firewall, energy and grocery costs in your budget."],
+         data="Everything runs on your Hub. Unlocking a door, opening the garage or switching off an alarm always needs a person to confirm it, and can never be done by a schedule or an agent on its own. Face recognition is off unless you turn it on. Camera clips are encrypted, kept for days rather than months, and every viewing is logged.",
+         status="Later, from 2029. Designed, not yet built.",
+         works=["hub", "tv", "firewall", "finance"]),
+    dict(slug="finance", name="Rafiq Finance", tag="Later",
+         summary="All your accounts, cards and loans in one private ledger, with advice that knows your situation.",
+         lede="See every account, transaction and loan in one place, kept on your own device. Then ask it things: where the money goes, how to reach a goal sooner, and whether a purchase is worth it right now.",
+         does=["One ledger for bank accounts, cards, loans, recurring bills and net worth over time.",
+               "Transactions sorted for you by a model that runs on your device and learns from your corrections.",
+               "Budgets and goals with honest projections based on how you actually spend.",
+               "A forecast that warns you before a shortfall, not after.",
+               "Ask before you buy: a reasoned answer showing what a purchase does to this month and to your goals, the cost per use, and what waiting would change.",
+               "A household view for shared bills, with each person's private accounts kept private."],
+         data="Your finances stay on your device, encrypted. Connections to banks are read-only by design: Rafiq can see your accounts and can never move your money. You can run it entirely from files you import and never connect a bank. It explains and reasons from your own numbers; it is not regulated financial advice and does not sell you products.",
+         status="Later, from 2029. Designed, not yet built.",
+         works=["core", "assistant", "home", "mobile"]),
     dict(slug="core", name="Rafiq Core", tag="Foundation",
          summary="The shared engine behind every Rafiq product: models, memory, permissions and an audit log.",
          lede="One service on your device that every Rafiq product talks to. It routes requests to models, stores your data encrypted, and decides what is allowed to leave.",
@@ -175,6 +202,11 @@ TOURS = {
    "Ask",
    "The tutor answers only from your course material and shows where each answer came from.",
    "A tutor answer with two source labels: Lecture 4 at 12:31 and Notes page 18."
+  ],
+  [
+   "For parents",
+   "See each child's week at a glance, with a plan built around your family. Your child sees exactly what you see.",
+   "A parent's view with two children's progress rings, upcoming tests, and a five-day study plan."
   ]
  ],
  "assistant": [
@@ -313,6 +345,40 @@ TOURS = {
    "A television showing one person's brief, calendar and mail."
   ]
  ],
+ "home": [
+  [
+   "Your home",
+   "Every room and device on one screen. Type or say what you want.",
+   "A home dashboard with eight tiles for rooms and devices, and a typed request to turn off the lights downstairs."
+  ],
+  [
+   "Power",
+   "Watch energy flow between solar, battery, grid and the house, and get a plan for outages.",
+   "A diagram of power flowing from solar to the home and battery, with a suggestion to run the dishwasher at 13:00."
+  ],
+  [
+   "Cameras and groceries",
+   "Cameras that keep their footage at home, and a pantry that tells you what is running low.",
+   "Four camera tiles, one showing a person detected, beside a grocery list with items running out."
+  ]
+ ],
+ "finance": [
+  [
+   "Everything in one place",
+   "Net worth, every account and loan, and where the money went.",
+   "A finance overview with net worth, four accounts and a spending breakdown by category."
+  ],
+  [
+   "Ask before you buy",
+   "Describe a purchase and get a reasoned answer from your own numbers.",
+   "A question about buying a laptop, answered with Wait about six weeks and four reasons."
+  ],
+  [
+   "Plan ahead",
+   "Goals with honest projections, bills coming up, and a ledger that can never move your money.",
+   "Three goal progress bars, a list of upcoming bills, and a panel reading Read-only by design."
+  ]
+ ],
  "core": [
   [
    "One gate",
@@ -354,7 +420,7 @@ E = html.escape
 
 HEAD = """<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{title} | Rafiq</title><meta name="description" content="{desc}">
-<link rel="stylesheet" href="/assets/site.css?v=20261120"><link rel="icon" href="/assets/favicon-32.png" sizes="32x32"><link rel="icon" href="/assets/icon-192.png" sizes="192x192"><link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="stylesheet" href="/assets/site.css?v=20261121"><link rel="icon" href="/assets/favicon-32.png" sizes="32x32"><link rel="icon" href="/assets/icon-192.png" sizes="192x192"><link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <meta property="og:title" content="{title} | Rafiq"><meta property="og:description" content="{desc}"><meta property="og:image" content="https://rafiqsystems.com/assets/social-card.png"><meta property="og:type" content="website"><meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0b0b1f"></head><body><div class="wrap">
 <header class="top"><a class="brand" href="/"><img src="/assets/icon-64.png" alt="" width="40" height="40">Rafiq</a>
@@ -403,7 +469,7 @@ def page(p):
 
 
 def index():
-    out = [HEAD.format(title="Products", desc="Every Rafiq product: chat, study, assistant, apps, an AI-first desktop, a firewall, cooperative cars, and the core they share.")]
+    out = [HEAD.format(title="Products", desc="Every Rafiq product: chat, study, assistant, apps, an AI-first desktop, a firewall, the home, your finances, cooperative cars, and the core they share.")]
     out.append('<main><div class="prose"><h1>Products</h1><p class="lede">Every product is a surface on one shared core, and each is held to the same principles: local by default, consent for every data flow, and data you can take with you.</p></div>\n')
     out.append('<div class="grid products">\n' + "\n".join(card(p) for p in PRODUCTS) + "\n</div>\n")
     out.append('<p class="back">Build order follows the <a href="/roadmap/">roadmap</a>.</p></main>\n')
@@ -415,7 +481,7 @@ def main():
     for p in PRODUCTS:
         for s in p["works"]:
             assert s in BY_SLUG, (p["slug"], s)
-        assert len(TOURS[p["slug"]]) == 3, p["slug"]
+        assert len(TOURS[p["slug"]]) in (3, 4), p["slug"]
         d = ROOT / "products" / p["slug"]
         d.mkdir(parents=True, exist_ok=True)
         (d / "index.html").write_text(page(p), encoding="utf-8")
