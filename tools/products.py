@@ -37,7 +37,7 @@ PRODUCTS = [
          data="A school, a family or a student can host it themselves. Course material, notes and questions stay on that server unless a cloud provider is switched on, and each provider is a visible, revocable grant. A child sees exactly what a parent can see about them. There is no advertising, no profiling and nothing designed to hook a child.",
          status="Phase 2. The ingestion pipeline and its provider interfaces are built and tested, with local and cloud engines behind the same interface. The features for parents are designed, not yet built.",
          works=["core", "hub", "assistant", "tv"]),
-    dict(slug="assistant", name="Rafiq Assistant", tag="Phase 3",
+    dict(slug="assistant", name="Najid", tag="Phase 3",
          summary="A personal assistant for your day, with a grant behind every data source.",
          lede="One page that tells you what today looks like: your calendar, what needs attention in your inbox, open tasks from your notes, and a few headlines. Every line says where it came from.",
          does=["A daily briefing, on request or on a schedule you set.",
@@ -423,7 +423,7 @@ E = html.escape
 
 HEAD = """<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{title} | Rafiq</title><meta name="description" content="{desc}">
-<link rel="stylesheet" href="/assets/site.css?v=20261123"><link rel="icon" href="/assets/favicon-32.png" sizes="32x32"><link rel="icon" href="/assets/icon-192.png" sizes="192x192"><link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="stylesheet" href="/assets/site.css?v=20261124"><link rel="icon" href="/assets/favicon-32.png" sizes="32x32"><link rel="icon" href="/assets/icon-192.png" sizes="192x192"><link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <meta property="og:title" content="{title} | Rafiq"><meta property="og:description" content="{desc}"><meta property="og:image" content="https://rafiqsystems.com/assets/social-card.png"><meta property="og:type" content="website"><meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0b0b1f"></head><body><div class="wrap">
 <header class="top"><a class="brand" href="/"><img src="/assets/icon-64.png" alt="" width="40" height="40">Rafiq</a>

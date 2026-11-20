@@ -276,7 +276,7 @@ def assistant_1():
 
 
 def assistant_2():
-    g = pills(250, 70, [("Rafiq Assistant asks before it connects", MUTED)], size=14)
+    g = pills(250, 70, [("Najid asks before it connects", MUTED)], size=14)
     g += consent(210, 112, 540, "Calendar · for your morning briefing", "This is everything it can do. Untick anything.",
                  [("READS", "events from cal.example.org", CYAN), ("SENDS", "your calendar login and the date range", PINK), ("WRITES", "nothing", MUTED),
                   ("KEEPS", "nothing between calls", GOOD), ("RUNS", "when you ask   ·   not on a schedule", WARN)],
