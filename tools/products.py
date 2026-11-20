@@ -93,7 +93,7 @@ PRODUCTS = [
          lede="It learns what normal traffic looks like for each app and device, spots the unusual in milliseconds with a model built for exactly that, and acts on it at once. Then it tells you why, in plain language.",
          does=["Shows what is talking to whom, per app and per device.",
                "Blocks known-bad activity with curated, signed rule packs, and gives a reason for every block.",
-               "A very fast classification model at its heart, in the style of TypeSafe's Jev but trained on network traffic. It answers one question about every connection, is this normal for this device, in milliseconds.",
+               "A very fast classification model at its heart, trained on network traffic. It does not write text; it answers one question about every connection, is this normal for this device, with a confidence score, in milliseconds.",
                "Acts on unusual traffic at once: block it, hold it, or ask you, before the connection has done any harm.",
                "Learns a baseline for each device and flags departures from it.",
                "Onboards a new device with one card: what it seems to be, what it tried to reach, and a sensible set of rules to approve, narrow or deny.",
